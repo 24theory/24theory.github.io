@@ -80,10 +80,15 @@
 </div>
 
 <div style="clear:both; height:10px;">&nbsp;</div>
-
 <div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
 	点右上角按钮 <img src="http://pic.miliyo.com/wx/i/wxshare.png" style="width:20px;" />，分享结果到朋友圈。
+	<div id="message"> </div>
 </div>
+ <script>
+window.onload=function(){
+	document.getElementById("message").innerHTML='<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
+}
+ </script>
 <div style="font-size:6px;margin-top:-5px;margin-left:5px; padding:0px;"> 感谢miliyo, fcuk偷人家代码不给credit的人</div>
 
 <script src="http://pic.miliyo.com/wx/html/js/bind_polyfill.js"></script>
