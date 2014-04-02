@@ -233,7 +233,7 @@ descContent += '<'+messages[5*0+1*Math.floor((Math.random()*messages.length))]+'
         }
         function shareTimeline() {
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
-descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
+descContent += '<'+messages[0 *Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
                 "img_height": "200",
