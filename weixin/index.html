@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <title>有益智力游戏2048!</title>
 
-<link href="http://pic.miliyo.com/wx/html/js/main.css" rel="stylesheet" type="text/css">
+<link href="1/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 
 <meta property="og:title" content="2048 game"/>
 <meta property="og:site_name" content="2048 game"/>
 <meta property="og:description" content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!"/>
-<meta property="og:image" content="http://pic.miliyo.com/wx/i/2048.jpg"/>
+<meta property="og:image" content="1/2048.jpg"/>
 
 
-<script language="javascript" src="http://pic.miliyo.com/mapi/g/jq.mobi.min.js?gv=13_1"></script>
+<script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
 </head>
 <body style="margin:5px 0 0 0;padding:0 10px;">
 
@@ -75,13 +75,13 @@
   </div>
   <p class="game-explanation" style="margin:10px 0 10px 0px;line-height:20px;">
 	<div style="float:left;width:230px;text-align:right;font-size:14px;"><strong >玩法：</strong><span style="font-size:14px;">用手指上下左右滑动,将两个 &nbsp; <br/>相同的数字合成一个,如2+2合出4 &nbsp; &nbsp; <br/>4+4合出8 .... <span style="color:#fccc00;">直到1024+1024合出↗</span></span></div>
-	<div style="float:left;"><img src="http://pic.miliyo.com/wx/i/item_2048.png?v=3" style="height:50px;" /></div>
+	<div style="float:left;"><img src="http://24theory.github.io/weixin/1/item_2048.png?v=3" style="height:50px;" /></div>
   </p>
 </div>
 
 <div style="clear:both; height:10px;">&nbsp;</div>
 <div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
-	点右上角按钮 <img src="http://pic.miliyo.com/wx/i/wxshare.png" style="width:20px;" />，分享结果到朋友圈。
+	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享结果到朋友圈。
 	<div id="message" style="color:blue;"> </div>
 </div>
  <script>
@@ -91,22 +91,22 @@ window.onload=function(){
  </script>
 <div style="font-size:6px;margin-top:-5px;margin-left:5px; padding:0px;"> 感谢miliyo, fcuk偷人家代码不给credit的人</div>
 
-<script src="http://pic.miliyo.com/wx/html/js/bind_polyfill.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/classlist_polyfill.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/animframe_polyfill.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/keyboard_input_manager.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/html_actuator.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/grid.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/tile.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/local_storage_manager.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/game_manager.js"></script>
-<script src="http://pic.miliyo.com/wx/html/js/application.js"></script>
+<script src="http://24theory.github.io/weixin/1/bind_polyfill.js"></script>
+<script src="http://24theory.github.io/weixin/1/classlist_polyfill.js"></script>
+<script src="http://24theory.github.io/weixin/1/animframe_polyfill.js"></script>
+<script src="http://24theory.github.io/weixin/1/keyboard_input_manager.js"></script>
+<script src="http://24theory.github.io/weixin/1/html_actuator.js"></script>
+<script src="http://24theory.github.io/weixin/1/grid.js"></script>
+<script src="http://24theory.github.io/weixin/1/tile.js"></script>
+<script src="http://24theory.github.io/weixin/1/local_storage_manager.js"></script>
+<script src="http://24theory.github.io/weixin/1/game_manager.js"></script>
+<script src="http://24theory.github.io/weixin/1/application.js"></script>
 
 
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
-	<p style=" text-align:center;padding-left:50px;"><img src="http://pic.miliyo.com/wx/i/share.png?3" width="204"/></p>
+	<p style=" text-align:center;padding-left:50px;"><img src="1/share.png?3" width="204"/></p>
 	<div style="width:220px;height:250px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
-		<i style="position:absolute; background:url(http://pic.miliyo.com/wx/i/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="$('#result_div').hide();"></i>
+		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="$('#result_div').hide();"></i>
 
 		<center style="line-height:25px;font-size:20px;margin-top:20px;color:#eee;" id="result_content">
 		<span style="font-size:36px;"><font color="#fce700">2857!</font></span><br/><br/>
@@ -215,7 +215,7 @@ function set_title()
 		
 	}
 }
-        var imgUrl = 'http://pic.miliyo.com/wx/i/item_2048.png';
+        var imgUrl = 'http://24theory.github.io/weixin/1/item_2048.png';
         var lineLink = 'http://24theory.github.io/weixin/';
         var descContent = '我得了'+cur_score+'分！还行吧';
         var shareTitle = '有益智力游戏2048';
