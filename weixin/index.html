@@ -86,7 +86,7 @@
 </div>
  <script>
 window.onload=function(){
-	document.getElementById("message").innerHTML='<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
+	document.getElementById("message").innerHTML='<'+messages[Math.floor((Math.random()*messages.length))]+'>';
 }
  </script>
 <div style="font-size:6px;margin-top:-5px;margin-left:5px; padding:0px;"> 感谢miliyo, fcuk偷人家代码不给credit的人</div>
@@ -223,7 +223,7 @@ function set_title()
         
         function shareFriend() {
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
-descContent += '<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
+descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
