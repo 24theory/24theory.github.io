@@ -62,12 +62,12 @@ window.onload=function(){
 var cur_score = 0; 
         var imgUrl = 'http://24theory.github.io/weixin/1/2048.png';
         var lineLink = 'http://24theory.github.io/weixin/';
-        var descContent = '我得了'+cur_score+'分！还行吧';
+        var descContent = '24点智力游戏不错,推荐';
         var shareTitle = '有益智力游戏2048';
         var appid = '';
         
         function shareFriend() {
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+		descContent = '24点智力游戏不错,推荐 \n\r';
 descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
@@ -82,7 +82,7 @@ descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
             })
         }
         function shareTimeline() {
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+descContent = '24点智力游戏不错,推荐 \n\r';
 descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
@@ -95,7 +95,7 @@ descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';   
             });
         }
         function shareWeibo() {
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+descContent = '24点智力游戏不错,推荐 \n\r';
 descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
             WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
