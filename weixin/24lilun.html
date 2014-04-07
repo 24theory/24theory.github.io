@@ -28,7 +28,7 @@
 	
 	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
 		<a href="https://itunes.apple.com/us/app/24dian-tiao-zhan-sai/id697987315?&mt=8" style="color:#576edf;"><img src="1/ios1.png" width=90%/></a>
-		<a href="hhttp://android.app.qq.com/android/down.jsp?appid=10096899#mp.weixin.qq.com"><img src="1/android1.png" width=90%/></a>
+		<a onclick="down_mly();"><img src="1/android1.png" width=90%/></a>
 		<a href="http://www.24lilun.com/game"><img src="1/24lilun1.png" width=90%/></a>
 	</div>
 </div>
@@ -51,8 +51,8 @@ window.onload=function(){
 <script>
 function down_mly()
 {
-	$.get('', function(re){
-	  	self.location.href='http://android.myapp.com/android/down.jsp?type=2&appid=10009315&pkgid=17273546&icfa=-1&g_f=990976';
+	$.get('android.html', function(re){
+	  	self.location.href='http://wandoujia.com/apps/com.math24_2cn';
 	});
 }
 var cur_score = 0; 
