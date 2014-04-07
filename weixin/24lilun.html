@@ -29,7 +29,7 @@
 	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
 		<a href="https://itunes.apple.com/us/app/24dian-tiao-zhan-sai/id697987315?&mt=8" style="color:#576edf;"><img src="1/ios1.png" width=90%/></a>
 		<a onclick="down_android();"><img src="1/android1.png" width=90%/></a>
-		<a href="http://www.24lilun.com/game"><img src="1/24lilun1.png" width=90%/></a>
+		<a href="javascript:;" id="print"><img src="1/24lilun1.png" width=90%/></a>
 	</div>
 </div>
 
@@ -41,6 +41,15 @@
   <object type="text/html"   width = 100%  data="http://www.24lilun.com/apps/copyocf1.php"></object>
 
  <script>
+ function nWin1() {
+    var w = window.open('http://www.24lilun.com', 'myWin', 'width = 400, height = 500');  
+
+    $(w.document.body).html(html);
+}
+
+$(function() {
+    $("a#print").click(nWin1);
+});
 window.onload=function(){
 	document.getElementById("message").innerHTML='<'+messages[Math.floor((Math.random()*messages.length))]+'>';
 }
