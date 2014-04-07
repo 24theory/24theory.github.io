@@ -27,7 +27,7 @@
 	
 	
 	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
-		<a href="https://itunes.apple.com/us/app/24dian-tiao-zhan-sai/id697987315?&mt=8" style="color:#576edf;"><img src="1/ios1.png" width=90%/></a>
+		<a onclick="down_ios();"><img src="1/ios1.png" width=90%/></a>
 		<a onclick="down_android();"><img src="1/android1.png" width=90%/></a>
 		<a onclick="go_html();"><img src="1/24lilun1.png" width=90%/></a>
 	</div>
@@ -41,11 +41,21 @@
   <object type="text/html"   width = 100%  data="http://www.24lilun.com/apps/copyocf1.php"></object>
 
  <script>
+  function down_ios()
+{
+	var x=window.open(,,"height=200,width=200");
+x.document.open();
+x.document.write('<meta http-equiv="refresh" content="0; url=https://itunes.apple.com/us/app/24dian-tiao-zhan-sai/id697987315?&mt=8" />');
+x.document.close();
+ //	$.get('android.html', function(re){
+//	  	self.location.href='http://android.app.qq.com/android/appdetail.jsp?appid=10096899';
+//	});
+}
  function down_android()
 {
 	var x=window.open();
 x.document.open();
-x.document.write('<meta http-equiv="refresh" content="0; url=http://wandoujia.com/apps/com.math24_2cn" />');
+x.document.write('<meta http-equiv="refresh" content="0; url=http://android.app.qq.com/android/appdetail.jsp?appid=10096899" />');
 x.document.close();
  //	$.get('android.html', function(re){
 //	  	self.location.href='http://android.app.qq.com/android/appdetail.jsp?appid=10096899';
