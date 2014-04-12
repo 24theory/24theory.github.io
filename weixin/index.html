@@ -89,7 +89,7 @@
 </div>
  <script>
 window.onload=function(){
-	document.getElementById("message").innerHTML='<'+messages[Math.floor((Math.random()*messages.length))]+'>';
+	document.getElementById("message").innerHTML='<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
 }
  </script>
 <div style="font-size:6px;margin-top:-5px;margin-left:5px; padding:0px;"> 鸣谢miliyo</div>
@@ -226,7 +226,7 @@ function set_title()
         
         function shareFriend() {
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
-descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
+descContent += '<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
@@ -241,7 +241,7 @@ descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
         }
         function shareTimeline() {
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
-descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
+descContent += '<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';            WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
                 "img_height": "200",
@@ -254,7 +254,7 @@ descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';   
         }
         function shareWeibo() {
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
-descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
+descContent += '<'+messages[0*Math.floor((Math.random()*messages.length))]+'>';
             WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
@@ -278,7 +278,8 @@ descContent += '<'+messages[Math.floor((Math.random()*messages.length))]+'>';
             });
         }, false);
 
-var messages=new Array("勿忘731， 关注中央电视台新纪录片",
+var messages=new Array( "清华创作歌手王可达: site.douban.com/keda",
+	"勿忘731， 关注中央电视台新纪录片",
 "香港人民在被洋人统治的时候相当顺从",
 "要把东南亚变成我们的热带乐园",
 "中文,英文,西班牙文, 学会了就足够了",
