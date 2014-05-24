@@ -1,5 +1,5 @@
 var game_type2  = "请不要作弊                                                   ";
-var game_type1  = "   开始测试 !";
+var game_type1  = " 点这里开始!";
 
 var game_str;
 
