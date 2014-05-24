@@ -14,8 +14,13 @@
 <meta property="og:image" content="http://24theory.github.io/weixin/1/2048.png"/>
 
 <script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
+
+ <script type="text/javascript" src="http://24theory.github.io/weixin/1/challenge.js"> </script> 
+ <script type="text/javascript" src="http://24theory.github.io/weixin/1/str.js"></script> 
 </head>
-<body style="margin:5px 0 0 0;padding:0 10px;">
+<div id="page_body">
+
+<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game([851,116,846,855,719,525,814,685,105,973 ])" id = canvas_body>
 
 <div class="container"  >
   <div class="heading">
@@ -38,44 +43,8 @@
       <a class="keep-playing-button">Keep going</a>
       <a class="restart-button">New Game</a>
     </div>
-  
-  <div class="game-container" style="margin:0 10px 0 0;" id="screenShotContainer">
-	<div class="game-message" id="msg_box" style="">
-	<div style="font-weight:bold;margin:120px 0 10px 0;font-size:20px;">合出数字: <span style="color:red;font-size:28px;" id="result_number"></span></div>
-
-	  <div class="lower">
-		<a class="retry-button">重新开始</a>
-	  </div>
-	</div>
-	<div class="grid-container">
-	  <div class="grid-row">
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-	  </div>
-	  <div class="grid-row">
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-	  </div>
-	  <div class="grid-row">
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-	  </div>
-	  <div class="grid-row">
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-		<div class="grid-cell"></div>
-	  </div>
-	</div>
-	<div class="tile-container">
-	</div>
-  </div>
+   	   
+  	    <canvas id="canvasID"   width= 300  height = 300  style="border:solid 1px #444444;" > Your browser does not support HTML5, get a newer one. </canvas> 
   <p class="game-explanation" style="margin:10px 0 10px 0px;line-height:20px;">
 	<div style="float:left;width:230px;text-align:right;font-size:14px;"><strong >玩法：</strong><span style="font-size:14px;">用手指上下左右滑动,将两个 &nbsp; <br/>相同的数字合成一个,如2+2合出4 &nbsp; &nbsp; <br/>4+4合出8 .... <span style="color:#fccc00;">直到1024+1024合出↗</span></span></div>
 	<div style="float:left;"><img src="http://24theory.github.io/weixin/1/item_2048.png?v=3" style="height:50px;" /></div>
@@ -97,17 +66,6 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
-<script src="http://24theory.github.io/weixin/1/bind_polyfill.js"></script>
-<script src="http://24theory.github.io/weixin/1/classlist_polyfill.js"></script>
-<script src="http://24theory.github.io/weixin/1/animframe_polyfill.js"></script>
-<script src="http://24theory.github.io/weixin/1/keyboard_input_manager.js"></script>
-<script src="http://24theory.github.io/weixin/1/html_actuator.js"></script>
-<script src="http://24theory.github.io/weixin/1/grid.js"></script>
-<script src="http://24theory.github.io/weixin/1/tile.js"></script>
-<script src="http://24theory.github.io/weixin/1/local_storage_manager.js"></script>
-<script src="http://24theory.github.io/weixin/1/game_manager.js"></script>
-<script src="http://24theory.github.io/weixin/1/application.js"></script>
 
 
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
@@ -223,7 +181,7 @@ function set_title()
 	}
 }
         var imgUrl = 'http://24theory.github.io/weixin/1/2048.png';
-        var lineLink = 'http://24theory.github.io/weixin/';
+        var lineLink = 'http://beijingpm25.com/2048/weixin/';
         var descContent = '我得了'+cur_score+'分！还行吧';
         var shareTitle = '有益智力游戏2048';
         var appid = '';
@@ -281,5 +239,5 @@ function set_title()
         }, false);
 
 </script>
-</body>
+</body></div>
 </html>
