@@ -221,6 +221,8 @@ function init_game(game_input){
 	canvas_ele.focus();
 	width  = canvas_ele.width;
 	height = canvas_ele.height;
+	width =  window.innerWidth;
+	height = window.innerHeight;
 	status1   = 0;
        xywh_init  = new Array( width * percent_w_init / 2,   height * percent_h_init / 4, 	  	  width * ( 1- percent_w_init),    height * ( 1- percent_h_init) / 2);
        xywh_init1 = new Array( width * percent_w_init / 2,   height * (percent_h_init / 4 + 0.5), 	  width * ( 1- percent_w_init),    height * ( 1- percent_h_init) / 2);
