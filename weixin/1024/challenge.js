@@ -409,9 +409,11 @@ function start_game(){
 
 	rect_QUIT_array = new Array(rect1, rect2); 
 
-	rect_sol = new Array( marg_ratio * width /4, (1 - 2 *  marg_ratio) * height /6, (3 + 1 * marg_ratio) * width /4, (4.5 + 2 * marg_ratio) * height /6);
-	rect_no_sol = new Array( rect_sol[0] * 2.5, rect_sol[1] + rect_sol[3] * 0.7, rect_sol[2] * 0.8,  rect_sol[3] * 0.2);
- 
+	//rect_sol = new Array( marg_ratio * width /4, (1 - 2 *  marg_ratio) * height /6, (3 + 1 * marg_ratio) * width /4, (4.5 + 2 * marg_ratio) * height /6);
+	//rect_no_sol = new Array( rect_sol[0] * 2.5, rect_sol[1] + rect_sol[3] * 0.7, rect_sol[2] * 0.8,  rect_sol[3] * 0.2);
+	 var b_ratio = 0.1, b_ratio1 = 0.05; 
+	rect_sol = new Array(b_ratio * width, b_ratio * height, width - 2 * b_ratio * width, height - 2 * b_ratio * height);
+	rect_no_sol = new Array( (b_ratio1 + b_ratio )* width, height - (b_ratio1 + 2 * b_ratio) * height, width - 2* (b_ratio1 +b_ratio)* width, b_ratio * height);
 	game_draw(0);
 	setInterval(function(){tickclock()},10);
 //	tickclock();
