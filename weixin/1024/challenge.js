@@ -378,7 +378,7 @@ function start_game(){
 
 
 	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-
+	rect_score = new Array(0,0,0,0);
 
 	rect_tmpv = new Array();
 	for (ii = 0; ii < 3; ii ++){
