@@ -351,7 +351,18 @@ function start_game(){
 	rect_redo = rect_tmpv[3];
 	rect_addall = rect_tmpv[1];
 	rect_multiall = rect_tmpv[2];
+	rect_addall = rect_tmpv[1];
+	rect_multiall = rect_tmpv[2];
+	rect_tmpv = new Array();
+	for (ii = 0; ii < 3; ii ++){
+		var tmp1 =  N1 * width, tmp2 = width - 2* N1* width + N1 *  marg_ratio * N1;
+		rect1 = new Array( width - tmp2, (ii + 1) * tmp1/2, tmp2, tmp1/2);
+		rect_tmpv.push(rect1);
+	}
 
+	rect_clock = rect_tmpv[0];
+	rect_solved   = rect_tmpv[1];
+	rect_unsolved = rect_tmpv[2];
 /////
 /*
 
@@ -374,7 +385,6 @@ function start_game(){
 	marg_ratio = 0.2;
 	rect_undo = new Array( marg_ratio * width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_redo = new Array( (marg_ratio + 1)* width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-*/
 
 
 	marg_ratio = 0.2;
@@ -385,6 +395,12 @@ function start_game(){
 
 	rect_skip  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+*/
+
+	rect_skip  = new Array( width * ( 1- (1-N1*2) * quit_ratio), marg_ratio * width * N1, (1-N1*2) * quit_ratio* width, (1-N1*2) * quit_ratio* width);
+
+	rect_all.push(rect_undo, rect_redo, rect_skip, rect_skip, rect_addall, rect_multiall); // rect 8,9,10,11
+	
 
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
 	
