@@ -316,6 +316,46 @@ function start_game(){
 	pause_total = 501;
 	coffee_total = 60001; coffee_waiting = 0;
 
+
+
+
+
+	var N1 = num_ratio; 
+	var rect1 = new Array( marg_ratio * width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect2 = new Array( (1 + marg_ratio )* width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect3 = new Array( marg_ratio * width * N1, (1 + marg_ratio) * width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect4 = new Array( (1 + marg_ratio) * width * N1, (1 + marg_ratio)* width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	num_rect  = new Array(rect1, rect2, rect3, rect4);  // the rects for the numbers
+	rect_all  = new Array(rect1, rect2, rect3, rect4);   	
+
+	var UNIT_wh = width / 4; 
+	var Lower_height = (height -  N1 * width) / 3;
+	if (UNIT_wh > Lower_height)
+		UNIT_wh = Lower_height; 
+
+	marg_ratio = 0.05;	
+	var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
+	op_rect = new Array();
+	for (ii = 0; ii < 4; ii ++){	
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/6 - tmp1/2, tmp1, tmp1);
+		op_rect.push(rect1); rect_all.push(rect1);
+	}
+	
+	var rect_tmpv = new Array();
+	for (ii = 0; ii < 4; ii ++){
+		var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/2 - tmp1/2, tmp1, tmp1);
+		rect_tmpv.push(rect1);
+	}
+	rect_undo = rect_tmpv[0];
+	rect_redo = rect_tmpv[3];
+	rect_addall = rect_tmpv[1];
+	rect_multiall = rect_tmpv[2];
+
+/////
+/*
+
+
 	var marg_ratio =  0.1; 
 	var rect1 = new Array( marg_ratio * width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
 	var rect2 = new Array( (1 + marg_ratio )* width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
@@ -334,6 +374,7 @@ function start_game(){
 	marg_ratio = 0.2;
 	rect_undo = new Array( marg_ratio * width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_redo = new Array( (marg_ratio + 1)* width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+*/
 
 
 	marg_ratio = 0.2;
