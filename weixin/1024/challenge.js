@@ -221,7 +221,6 @@ function init_game(game_input){
 	canvas_ele.focus();
 	width  = canvas_ele.width;
 	height = canvas_ele.height;
-	height = width *5/5;
 	//width =  window.innerWidth;
 	//height = window.innerHeight;
 	status1   = 0;
