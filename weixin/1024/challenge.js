@@ -606,7 +606,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "请再也不要显示答案了", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 */
 
-		text_never_show_sol ="     再也不要显示答案了         ",
+		var text_never_show_sol ="     再也不要显示答案了         ",
 		draw_rect(rect_sol, "#fff", 2, "#bbb");
 		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
 		var text_touch =  "触摸任何地方或者等待   " + ((pause_total1-pause_tick)/100).toFixed(0) + " 秒钟              ";		var rect_cof = new Array(rect_no_sol[0],rect_sol[1],rect_no_sol[2],rect_no_sol[3]/2);
