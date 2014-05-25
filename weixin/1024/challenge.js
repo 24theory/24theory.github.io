@@ -392,7 +392,7 @@ function start_game(){
 
 
 	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_skip  = new Array( width * ( 1- (1-N1*2) * quit_ratio), marg_ratio * width * N1, (1-N1*2) * quit_ratio* width, (1-N1*2) * quit_ratio* width);
+	rect_skip  = new Array( width * ( 1- (1-N1*1) * quit_ratio), marg_ratio * width * N1, (1-N1*1) * quit_ratio* width, (1-N1*1.5) * quit_ratio* width);
 	
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit, rect_addall, rect_multiall); // rect 8,9,10,11
