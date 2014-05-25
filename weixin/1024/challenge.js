@@ -1,5 +1,5 @@
-var game_type2  = "请不要作弊                                                   ";
-var game_type1  = " 点这里开始!";
+var game_type2  = "?????                                                   ";
+var game_type1  = " ?????!";
 
 var game_str;
 
@@ -313,66 +313,45 @@ function start_game(){
 	pause_total = 501;
 	coffee_total = 60001; coffee_waiting = 0;
 
-var N1 = num_ratio; 
-	var rect1 = new Array( marg_ratio * width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
-	var rect2 = new Array( (1 + marg_ratio )* width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
-	var rect3 = new Array( marg_ratio * width * N1, (1 + marg_ratio) * width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
-	var rect4 = new Array( (1 + marg_ratio) * width * N1, (1 + marg_ratio)* width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var marg_ratio =  0.1; 
+	var rect1 = new Array( marg_ratio * width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
+	var rect2 = new Array( (1 + marg_ratio )* width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
+	var rect3 = new Array( marg_ratio * width /3, (1 + marg_ratio) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
+	var rect4 = new Array( (1 + marg_ratio) * width /3, (1 + marg_ratio)* height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
 	num_rect  = new Array(rect1, rect2, rect3, rect4);  // the rects for the numbers
 	rect_all  = new Array(rect1, rect2, rect3, rect4);   	
 
-	var UNIT_wh = width / 4; 
-	var Lower_height = (height -  N1 * width) / 3;
-	if (UNIT_wh > Lower_height)
-		UNIT_wh = Lower_height; 
+	marg_ratio = 0.05;
+	rect1 = new Array( marg_ratio * width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
+	rect2 = new Array( (marg_ratio + 1) * width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
+	rect3 = new Array( (marg_ratio  + 2)* width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
+	rect4 = new Array( (marg_ratio  + 3)* width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
+	op_rect = new Array(rect1, rect2, rect3, rect4);  // the rects for the numbers
+	rect_all.push(rect1, rect2, rect3, rect4);	
+	marg_ratio = 0.2;
+	rect_undo = new Array( marg_ratio * width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_redo = new Array( (marg_ratio + 1)* width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
-	marg_ratio = 0.05;	
-	var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
-	op_rect = new Array();
-	for (ii = 0; ii < 4; ii ++){	
-		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/6 - tmp1/2, tmp1, tmp1);
-		op_rect.push(rect1); rect_all.push(rect1);
-	}
+
+	marg_ratio = 0.2;
+	rect_clock    = new Array( (marg_ratio + 2)* width /3, marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_solved   = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 0.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_unsolved =    new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+
+	rect_skip  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+
+	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
 	
-	var rect_tmpv = new Array();
-	for (ii = 0; ii < 4; ii ++){
-		var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
-		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/2 - tmp1/2, tmp1, tmp1);
-		rect_tmpv.push(rect1);
-	}
-	rect_undo = rect_tmpv[0];
-	rect_redo = rect_tmpv[3];
-	rect_addall = rect_tmpv[1];
-	rect_multiall = rect_tmpv[2];
 
-	rect_help = new Array( (1 + 0 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, tmp1, tmp1);
-	rect_www = new Array( (1 + 1 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, 2*tmp1 + 2 * marg_ratio *UNIT_wh, tmp1);
-	rect_skip = new Array( (1 + 3 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, tmp1, tmp1);
+	rect1 = new Array( marg_ratio * width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect2 = new Array( (marg_ratio + 1)* width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
-	rect_quit  = new Array( width * ( 1- (1-N1*2) * quit_ratio), marg_ratio * width * N1, (1-N1*2) * quit_ratio* width, (1-N1*2) * quit_ratio* width);
-
-	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit, rect_addall, rect_multiall, rect_help, rect_www); // rect 8,9,10,11
-	
-	rect_tmpv = new Array();
-	for (ii = 0; ii < 3; ii ++){
-		var tmp1 =  N1 * width, tmp2 = width - 2* N1* width + N1 *  marg_ratio * N1;
-		rect1 = new Array( width - tmp2, (ii + 1) * tmp1/2, tmp2, tmp1/2);
-		rect_tmpv.push(rect1);
-	}
-
-	rect_clock = rect_tmpv[0];
-	rect_solved   = rect_tmpv[1];
-	rect_score = rect_tmpv[2];
-
-	messbox = Array( q_ratio * width, height/5 , width * 2/3, height *2/3);
-	rect1 = new Array( q_ratio * width * 2 ,  height *29/45, width * 1/3 -q_ratio * width * 2 , height *7/45);
-	rect2 = new Array( q_ratio * width *2 + width /3 ,  height *29/45, width * 1/3 -q_ratio * width * 2 , height *7/45);
-	
 	rect_QUIT_array = new Array(rect1, rect2); 
 
-	var b_ratio = 0.1, b_ratio1 = 0.05; 
-	rect_sol = new Array(b_ratio * width, b_ratio * height, width - 2 * b_ratio * width, height - 2 * b_ratio * height);
-	rect_no_sol = new Array( (b_ratio1 + b_ratio )* width, height - (b_ratio1 + 2 * b_ratio) * height, width - 2* (b_ratio1 +b_ratio)* width, b_ratio * height);
+	rect_sol = new Array( marg_ratio * width /4, (1 - 2 *  marg_ratio) * height /6, (3 + 1 * marg_ratio) * width /4, (4.5 + 2 * marg_ratio) * height /6);
+	rect_no_sol = new Array( rect_sol[0] * 2.5, rect_sol[1] + rect_sol[3] * 0.7, rect_sol[2] * 0.8,  rect_sol[3] * 0.2);
  
 	game_draw(0);
 	setInterval(function(){tickclock()},10);
@@ -442,29 +421,29 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	if (isclock)	{ // only need to update the clock region
 		draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 		var colortext = "#000"; if (time_now <=20 && game_type ==0) colortext ="#f00";
-		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "??: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 		draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
 	draw_rect(Array(0,0, width, height), "#fff", 1, "#000"); // clean the whole region
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
-	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "??: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 	//draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" +  Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 
 
 	draw_rect(rect_solved ,  "#fff", 0, "#000");  		
-	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "已解: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
+	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "??: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
 
 	draw_rect(rect_unsolved ,  "#fff", 0, "#000");
-	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "未解: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
+	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "??: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
 
 //	draw_rect(rect_quit ,  "#fff", 3, "#f00");
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 3, "#00f");
-	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "      跳过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
+	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "      ??", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
@@ -529,8 +508,8 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 
 		draw_rect(rect_sol, "#fff", 2, "#bbb");
 		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
-		draw_text(Array(rect_no_sol[0] * 1.6, rect_sol[1]  + rect_sol[3] * 0.05 ), "    点击任何地方或者等待  " + ((pause_total1-pause_tick)/100).toFixed(0) + "   秒", "#888", "bold " + Math.round(rect_no_sol[3]/5) +"px sans-serif");
-		draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ), "答案在下面   ", "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.6, rect_sol[1]  + rect_sol[3] * 0.05 ), "    ??????????  " + ((pause_total1-pause_tick)/100).toFixed(0) + "   ?", "#888", "bold " + Math.round(rect_no_sol[3]/5) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ), "?????   ", "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 		draw_text(Array(rect_no_sol[0] * 3.5, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ),  quad_prev[0] + "  "+ quad_prev[1] + "  "+ quad_prev[2] + "  "+ quad_prev[3] , "#0F7100", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 
 		//draw_text(Array(rect_no_sol[0] * 0.5, rect_sol[1]  + rect_sol[3] * 0.05 * 3 ), "Solutions for   "  + quad_prev[0] + " "+ quad_prev[1] + " "+ quad_prev[2] + " "+ quad_prev[3] , "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
@@ -547,7 +526,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 			 draw_text(Array(rect_no_sol[0] * 2.5, rect_sol[1]  + rect_sol[3] * (0.05 *4.0+ ii * 0.09) ), "["+ (ii +1) +"] " +sol_vec[ii], "#008", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 		}
 		// quad_all_prev[1]
-		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "请再也不要显示答案了", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "??????????", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 
 	}
 	if (status1 == 5){
