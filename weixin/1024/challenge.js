@@ -392,7 +392,7 @@ function start_game(){
 
 
 	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_skip  = new Array( width * ( 1- (1-N1*1.8) * quit_ratio), marg_ratio * width * N1, (1-N1*1.8) * quit_ratio* width, (1-N1*1.95) * quit_ratio* width);
+	rect_skip  = new Array( width * ( 1- (1-N1*1.8) * quit_ratio), marg_ratio * width * N1, (1-N1*1.8) * quit_ratio* width, (1-N1*1.97) * quit_ratio* width);
 	
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit, rect_addall, rect_multiall); // rect 8,9,10,11
@@ -496,7 +496,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 3, "#00f");
-	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "   跳过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
+	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "跳过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
