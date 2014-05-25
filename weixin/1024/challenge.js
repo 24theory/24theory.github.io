@@ -337,14 +337,14 @@ function start_game(){
 	var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
 	op_rect = new Array();
 	for (ii = 0; ii < 4; ii ++){	
-		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/6 - tmp1/2, tmp1, tmp1);
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/4 - tmp1/2, tmp1, tmp1);
 		op_rect.push(rect1); rect_all.push(rect1);
 	}
 	
 	var rect_tmpv = new Array();
 	for (ii = 0; ii < 4; ii ++){
 		var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
-		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/2 - tmp1/2, tmp1, tmp1);
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*.75 - tmp1/2, tmp1, tmp1);
 		rect_tmpv.push(rect1);
 	}
 	rect_undo = rect_tmpv[0];
