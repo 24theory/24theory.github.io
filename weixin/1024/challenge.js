@@ -313,45 +313,66 @@ function start_game(){
 	pause_total = 501;
 	coffee_total = 60001; coffee_waiting = 0;
 
-	var marg_ratio =  0.1; 
-	var rect1 = new Array( marg_ratio * width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
-	var rect2 = new Array( (1 + marg_ratio )* width /3,marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
-	var rect3 = new Array( marg_ratio * width /3, (1 + marg_ratio) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
-	var rect4 = new Array( (1 + marg_ratio) * width /3, (1 + marg_ratio)* height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /3);
+var N1 = num_ratio; 
+	var rect1 = new Array( marg_ratio * width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect2 = new Array( (1 + marg_ratio )* width * N1,marg_ratio * width * N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect3 = new Array( marg_ratio * width * N1, (1 + marg_ratio) * width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
+	var rect4 = new Array( (1 + marg_ratio) * width * N1, (1 + marg_ratio)* width* N1, (1- 2 * marg_ratio) * width * N1, (1- 2 * marg_ratio) * width* N1);
 	num_rect  = new Array(rect1, rect2, rect3, rect4);  // the rects for the numbers
 	rect_all  = new Array(rect1, rect2, rect3, rect4);   	
 
-	marg_ratio = 0.05;
-	rect1 = new Array( marg_ratio * width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
-	rect2 = new Array( (marg_ratio + 1) * width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
-	rect3 = new Array( (marg_ratio  + 2)* width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
-	rect4 = new Array( (marg_ratio  + 3)* width /6, (4 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /6, (1- 2 * marg_ratio) * width /6);
-	op_rect = new Array(rect1, rect2, rect3, rect4);  // the rects for the numbers
-	rect_all.push(rect1, rect2, rect3, rect4);	
-	marg_ratio = 0.2;
-	rect_undo = new Array( marg_ratio * width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_redo = new Array( (marg_ratio + 1)* width /3, (5 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	var UNIT_wh = width / 4; 
+	var Lower_height = (height -  N1 * width) / 3;
+	if (UNIT_wh > Lower_height)
+		UNIT_wh = Lower_height; 
 
-
-	marg_ratio = 0.2;
-	rect_clock    = new Array( (marg_ratio + 2)* width /3, marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_solved   = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 0.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_unsolved =    new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-
-	rect_skip  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-
-	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
+	marg_ratio = 0.05;	
+	var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
+	op_rect = new Array();
+	for (ii = 0; ii < 4; ii ++){	
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/6 - tmp1/2, tmp1, tmp1);
+		op_rect.push(rect1); rect_all.push(rect1);
+	}
 	
+	var rect_tmpv = new Array();
+	for (ii = 0; ii < 4; ii ++){
+		var tmp1 =  (1- 2 * marg_ratio) *UNIT_wh;
+		rect1 = new Array( (1 + ii * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)/2 - tmp1/2, tmp1, tmp1);
+		rect_tmpv.push(rect1);
+	}
+	rect_undo = rect_tmpv[0];
+	rect_redo = rect_tmpv[3];
+	rect_addall = rect_tmpv[1];
+	rect_multiall = rect_tmpv[2];
 
-	rect1 = new Array( marg_ratio * width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect2 = new Array( (marg_ratio + 1)* width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
+	rect_help = new Array( (1 + 0 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, tmp1, tmp1);
+	rect_www = new Array( (1 + 1 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, 2*tmp1 + 2 * marg_ratio *UNIT_wh, tmp1);
+	rect_skip = new Array( (1 + 3 * 2) * width/8 - tmp1/2, N1 *2* width +(height - N1 * 2*width)*5/6 - tmp1/2, tmp1, tmp1);
 
+	rect_quit  = new Array( width * ( 1- (1-N1*2) * quit_ratio), marg_ratio * width * N1, (1-N1*2) * quit_ratio* width, (1-N1*2) * quit_ratio* width);
+
+	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit, rect_addall, rect_multiall, rect_help, rect_www); // rect 8,9,10,11
+	
+	rect_tmpv = new Array();
+	for (ii = 0; ii < 3; ii ++){
+		var tmp1 =  N1 * width, tmp2 = width - 2* N1* width + N1 *  marg_ratio * N1;
+		rect1 = new Array( width - tmp2, (ii + 1) * tmp1/2, tmp2, tmp1/2);
+		rect_tmpv.push(rect1);
+	}
+
+	rect_clock = rect_tmpv[0];
+	rect_solved   = rect_tmpv[1];
+	rect_score = rect_tmpv[2];
+
+	messbox = Array( q_ratio * width, height/5 , width * 2/3, height *2/3);
+	rect1 = new Array( q_ratio * width * 2 ,  height *29/45, width * 1/3 -q_ratio * width * 2 , height *7/45);
+	rect2 = new Array( q_ratio * width *2 + width /3 ,  height *29/45, width * 1/3 -q_ratio * width * 2 , height *7/45);
+	
 	rect_QUIT_array = new Array(rect1, rect2); 
 
-	rect_sol = new Array( marg_ratio * width /4, (1 - 2 *  marg_ratio) * height /6, (3 + 1 * marg_ratio) * width /4, (4.5 + 2 * marg_ratio) * height /6);
-	rect_no_sol = new Array( rect_sol[0] * 2.5, rect_sol[1] + rect_sol[3] * 0.7, rect_sol[2] * 0.8,  rect_sol[3] * 0.2);
+	var b_ratio = 0.1, b_ratio1 = 0.05; 
+	rect_sol = new Array(b_ratio * width, b_ratio * height, width - 2 * b_ratio * width, height - 2 * b_ratio * height);
+	rect_no_sol = new Array( (b_ratio1 + b_ratio )* width, height - (b_ratio1 + 2 * b_ratio) * height, width - 2* (b_ratio1 +b_ratio)* width, b_ratio * height);
  
 	game_draw(0);
 	setInterval(function(){tickclock()},10);
