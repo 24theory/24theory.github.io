@@ -377,7 +377,6 @@ function start_game(){
 */
 
 
-	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_score = new Array(0,0,0,0);
 
 	rect_tmpv = new Array();
@@ -396,7 +395,8 @@ function start_game(){
 	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
 	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit); // rect 8,9,10,11
-	
+	rect_all.push(rect_undo, rect_redo, rect_skip, rect_quit, rect_addall, rect_multiall); // rect 8,9,10,11
+		
 
 	rect1 = new Array( marg_ratio * width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect2 = new Array( (marg_ratio + 1)* width /3, (3 + marg_ratio) * height /6, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
