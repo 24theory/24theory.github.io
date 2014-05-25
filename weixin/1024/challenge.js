@@ -581,7 +581,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	}
 	if (status1 == 4 && show_sol){ // show the solutions waiting for the esc
 
-		draw_rect(rect_sol, "#fff", 2, "#bbb");
+/*		draw_rect(rect_sol, "#fff", 2, "#bbb");
 		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
 		draw_text(Array(rect_no_sol[0] * 1.6, rect_sol[1]  + rect_sol[3] * 0.05 ), "    点击任何地方或者等待  " + ((pause_total1-pause_tick)/100).toFixed(0) + "   秒", "#888", "bold " + Math.round(rect_no_sol[3]/5) +"px sans-serif");
 		draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ), "答案在下面   ", "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
@@ -602,6 +602,32 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		}
 		// quad_all_prev[1]
 		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "请再也不要显示答案了", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+*/
+
+
+		draw_rect(rect_sol, "#fff", 2, "#bbb");
+		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
+		var text_touch =  "触摸任何地方或者等待   " + ((pause_total1-pause_tick)/100).toFixed(0) + " 秒钟              ";		var rect_cof = new Array(rect_no_sol[0],rect_sol[1],rect_no_sol[2],rect_no_sol[3]/2);
+		var tmp2 = text_in_rect (rect_cof, text_touch ); 
+		draw_text (Array(tmp2 [0], tmp2 [1]), text_touch , "#888" , "bold " + tmp2 [2] +"px sans-serif");
+		var text_solu = "下面显示所有独立解给 " + quad_prev[0] + "  "+ quad_prev[1] + "  "+ quad_prev[2] + "  "+ quad_prev[3];
+		var rect_cof1 = new Array(rect_no_sol[0] + rect_no_sol[3]/4, rect_sol[1] + rect_no_sol[3]*2/3, rect_no_sol[2], rect_no_sol[3]/4);
+		tmp2 = text_in_rect (rect_cof1, text_solu+"             "); 
+		draw_text (Array(tmp2 [0], tmp2 [1]), text_solu , "#222" , "bold " + tmp2 [2] +"px sans-serif");
+
+		var sol_vec = quad_all_prev[1].split(" ");
+		if (sol_vec.length > 6){
+			for (ii = 0; ii < sol_vec.length; ii +=2)
+				 draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * (0.05 *4.0+ ii/2 * 0.09) ), "["+ (ii +1) +"] " +sol_vec[ii], "#008", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+			for (ii = 1; ii < sol_vec.length; ii +=2)
+				 draw_text(Array(rect_no_sol[0] * 3.7, rect_sol[1]  + rect_sol[3] * (0.05 *4.0+ (ii-1)/2 * 0.09) ), "["+ (ii +1) +"] " +sol_vec[ii], "#008", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		}
+		else{
+			for (ii = 0; ii < sol_vec.length; ii ++)
+			 draw_text(Array(rect_no_sol[0] * 2.5, rect_sol[1]  + rect_sol[3] * (0.05 *4.0+ ii * 0.09) ), "["+ (ii +1) +"] " +sol_vec[ii], "#008", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		}
+		var tmp2 = text_in_rect (rect_no_sol, text_never_show_sol); 
+		draw_text (Array(tmp2 [0], tmp2 [1]), text_never_show_sol, "#888" , "bold " + tmp2 [2] +"px sans-serif");
 
 	}
 	if (status1 == 5){
