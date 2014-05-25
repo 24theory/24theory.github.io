@@ -383,6 +383,19 @@ function start_game(){
 	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_unsolved =    new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
+
+	rect_tmpv = new Array();
+	for (ii = 0; ii < 3; ii ++){
+		var tmp1 =  N1 * width, tmp2 = width - 2* N1* width + N1 *  marg_ratio * N1;
+		rect1 = new Array( width - tmp2, (ii + 1) * tmp1/2, tmp2, tmp1/2);
+		rect_tmpv.push(rect1);
+	}
+
+	rect_clock = rect_tmpv[0];
+	rect_solved   = rect_tmpv[1];
+	rect_unsolved = rect_tmpv[2];
+
+
 	rect_skip  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_quit  = new Array( (marg_ratio + 2)* width /3, (marg_ratio/2 + 2.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
