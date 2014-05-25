@@ -329,7 +329,7 @@ function start_game(){
 	rect_all  = new Array(rect1, rect2, rect3, rect4);   	
 
 	var UNIT_wh = width / 4; 
-	var Lower_height = (height -  N1 * width) / 3;
+	var Lower_height = (height -  N1 * width) / 2;
 	if (UNIT_wh > Lower_height)
 		UNIT_wh = Lower_height; 
 
