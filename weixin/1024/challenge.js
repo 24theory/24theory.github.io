@@ -15,7 +15,7 @@ var xywh_init ,  xywh_init1;
 var solved = 0, unsolved = 1362, totalQ = 1362;
 var this_quad;
 var time_now = 0, time_left = 0, time_tick = 0, game_tick = 0;  // time_tick is .01 second
-var pause_tick = 0, pause_total = 400, pause_total1;
+var pause_tick = 0, pause_total = 500, pause_total1;
 var coffee_tick = 0, coffee_total = 60001, coffee_num = 40, coffee_waiting = 0; 
 var now, before;
 var score_all = 0;  // the score 
