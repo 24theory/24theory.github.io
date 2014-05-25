@@ -212,6 +212,12 @@ function ongame(regionID){
 //		status1 = 3;
 //		game_draw(0);
 	}
+	else if (regionID == 12){// add all
+		 op_focus = -1;   ongame(0);ongame(4);ongame(1);ongame(4);ongame(2);ongame(4);ongame(3);ongame(4);  game_draw(0); 
+	}
+ 	else if (regionID == 13){// multiply all
+		 op_focus = -1;   ongame(0);ongame(6);ongame(1);ongame(6);ongame(2);ongame(6);ongame(3);ongame(6);  game_draw(0); 
+	}
 }
 
 function init_game(game_input){
