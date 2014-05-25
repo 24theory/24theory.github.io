@@ -80,29 +80,11 @@
 <br/>
 <script>
 var cur_score = 0;
+var max_number = 11;
 var show_end_tips = 1;
 
 var number_tips = 0;
-function show_medal()
-{
-	number_tips = max_number;
-	
-	var str = '';
-	if(number_tips == 1024)
-	{
-		document.title = '有益智力游戏，哈哈哈！我合出了1024！你也行';
-		str = '天呐！您居然合出了<br/><br/><span style="font-size:36px;color:#fce700">'+number_tips+'!</span><br/><br/>太帅气了<br/><div style="font-size:16px;padding-top:10px;color:#04e5f9; text-decoration:underline;" onclick="$(\'#result_div\').hide();">下个目标 -> '+ number_tips*2 +'　加油哦！</div>';
-	}
-	else if(number_tips == 2048)
-	{
-		document.title = '有益智力游戏，哈哈哈！我合出了2048！您野型？';
-		str = '神呐！您居然合出了<br/><br/><span style="font-size:36px;color:#fce700">'+number_tips+'!</span><br/><br/>真是NB<br/><div style="font-size:16px;padding-top:10px;color:#04e5f9; text-decoration:underline;" onclick="$(\'#result_div\').hide();">终极目标 -> '+ number_tips*2 +'　加油哦！</div>';
-	}
-	
-	$('#result_div').show();
-	$('#result_content').html(str);
-		
-}
+
 
 function set_title()
 {
@@ -110,10 +92,6 @@ function set_title()
 		
 	document.title = '有益智商游戏2048！我得了'+cur_score+'分！还行吧';
 		
-	if(number_tips<max_number && (max_number == 1024 || max_number == 2048))
-	{
-		show_medal();
-	}
 	
 	if(game_over==1 && cur_score>2000 && show_end_tips==1)
 	{
