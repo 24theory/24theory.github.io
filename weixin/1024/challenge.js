@@ -1,5 +1,5 @@
-var game_type2  = "?????                                                   ";
-var game_type1  = " ?????!";
+var game_type2  = "请不要作弊                                                   ";
+var game_type1  = " 点这里开始!";
 
 var game_str;
 
@@ -421,29 +421,29 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	if (isclock)	{ // only need to update the clock region
 		draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 		var colortext = "#000"; if (time_now <=20 && game_type ==0) colortext ="#f00";
-		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "??: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+		draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, colortext, "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 		draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
 	draw_rect(Array(0,0, width, height), "#fff", 1, "#000"); // clean the whole region
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
-	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "??: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
+	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
 	//draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" +  Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 
 
 	draw_rect(rect_solved ,  "#fff", 0, "#000");  		
-	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "??: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
+	draw_text(Array(rect_solved[0], rect_solved[1] + rect_solved[3]/1.9), "已解: \n" + solved, "#000", "bold " + Math.round(rect_solved[2]/6) +"px sans-serif");
 
 	draw_rect(rect_unsolved ,  "#fff", 0, "#000");
-	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "??: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
+	if(game_type==1) draw_text(Array(rect_unsolved[0], rect_unsolved[1] + rect_unsolved[3]/1.9), "未解: " + unsolved, "#000", "bold " + Math.round(rect_unsolved[2]/6) +"px sans-serif");
 
 //	draw_rect(rect_quit ,  "#fff", 3, "#f00");
 //	draw_text(Array(rect_quit[0], rect_quit[1] + rect_quit[3]/1.6), "      Quit", "#f00", "bold " + Math.round(rect_quit[2]/6) +"px sans-serif");
 
 	draw_rect(rect_skip ,  "#fff", 3, "#00f");
-	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "      ??", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
+	draw_text(Array(rect_skip[0], rect_skip[1] + rect_skip[3]/1.6), "      跳过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
 	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
 	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
@@ -508,8 +508,8 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 
 		draw_rect(rect_sol, "#fff", 2, "#bbb");
 		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
-		draw_text(Array(rect_no_sol[0] * 1.6, rect_sol[1]  + rect_sol[3] * 0.05 ), "    ??????????  " + ((pause_total1-pause_tick)/100).toFixed(0) + "   ?", "#888", "bold " + Math.round(rect_no_sol[3]/5) +"px sans-serif");
-		draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ), "?????   ", "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.6, rect_sol[1]  + rect_sol[3] * 0.05 ), "    点击任何地方或者等待  " + ((pause_total1-pause_tick)/100).toFixed(0) + "   秒", "#888", "bold " + Math.round(rect_no_sol[3]/5) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.0, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ), "答案在下面   ", "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 		draw_text(Array(rect_no_sol[0] * 3.5, rect_sol[1]  + rect_sol[3] * 0.05 * 2.5 ),  quad_prev[0] + "  "+ quad_prev[1] + "  "+ quad_prev[2] + "  "+ quad_prev[3] , "#0F7100", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 
 		//draw_text(Array(rect_no_sol[0] * 0.5, rect_sol[1]  + rect_sol[3] * 0.05 * 3 ), "Solutions for   "  + quad_prev[0] + " "+ quad_prev[1] + " "+ quad_prev[2] + " "+ quad_prev[3] , "#000", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
@@ -526,7 +526,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 			 draw_text(Array(rect_no_sol[0] * 2.5, rect_sol[1]  + rect_sol[3] * (0.05 *4.0+ ii * 0.09) ), "["+ (ii +1) +"] " +sol_vec[ii], "#008", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 		}
 		// quad_all_prev[1]
-		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "??????????", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
+		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "请再也不要显示答案了", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 
 	}
 	if (status1 == 5){
