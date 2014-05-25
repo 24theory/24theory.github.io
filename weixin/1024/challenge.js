@@ -377,11 +377,7 @@ function start_game(){
 */
 
 
-	marg_ratio = 0.2;
-	rect_clock    = new Array( (marg_ratio + 2)* width /3, marg_ratio * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_solved   = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 0.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 	rect_score = new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
-	rect_unsolved =    new Array( (marg_ratio + 2)* width /3, (marg_ratio + 1.5) * height /3, (1- 2 * marg_ratio) * width /3, (1- 2 * marg_ratio) * height /6);
 
 
 	rect_tmpv = new Array();
