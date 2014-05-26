@@ -91,7 +91,19 @@ function set_title()
 	
 		
 	document.title = '1024 测验！我得了'+cur_score+'分！还行吧';
-		
+	zs_num=56;
+			fy_num=70;
+			sd_num=60;
+			
+			level_name = '高手';
+			
+	$('#result_div').show();
+		$('#result_content').html('<span style="font-size:36px;"><font color="#fce700">'+cur_score+'!</font></span><br/><br/>'
+		+'天呐！在中国地区<br/>'
+		+'您的智商 <font color="#fc4d35">>'+zs_num+'％</font> 的人<br/>'
+		+'反应速度 <font color="#fc4d35">>'+fy_num+'％</font> 的人<br/>'
+		+'协调能力 <font color="#fc4d35">>'+sd_num+'％</font> 的人<br/><br/>'
+		+'您属于<span style="color:#04e5f9; font-size:30px;">'+level_name+'</span>级别！');		
 	
 /*	if(game_over==1 && cur_score>2000 && show_end_tips==1)
 	{
@@ -138,13 +150,7 @@ function set_title()
 		}
 		
 		
-		$('#result_div').show();
-		$('#result_content').html('<span style="font-size:36px;"><font color="#fce700">'+cur_score+'!</font></span><br/><br/>'
-		+'天呐！在中国地区<br/>'
-		+'您的智商 <font color="#fc4d35">>'+zs_num+'％</font> 的人<br/>'
-		+'反应速度 <font color="#fc4d35">>'+fy_num+'％</font> 的人<br/>'
-		+'协调能力 <font color="#fc4d35">>'+sd_num+'％</font> 的人<br/><br/>'
-		+'您属于<span style="color:#04e5f9; font-size:30px;">'+level_name+'</span>级别！');
+	
 		
 	}
 	*/
