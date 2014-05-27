@@ -2,7 +2,7 @@ var game_type2  = "请不要作弊                                              
 var game_type1  = " 点这里开始!";
 
 var game_str;
-
+ 
 var canvasID      = "canvasID";
 var canvas_ele;
 var canvas_cts;
@@ -51,7 +51,14 @@ function arraytostring(array1){
 
 
 function gameover(){// quit or finished all
-//	document.getElementById("gamesub").time_now.value =  time_now;
+/*	document.getElementById("gamesub").time_now.value =  time_now;
+	document.getElementById("gamesub").solved.value =  solved;
+	document.getElementById("gamesub").unsolved.value =  unsolved;
+	document.getElementById("gamesub").score_all.value =  Math.round(score_all);
+	document.getElementById("gamesub").id_array.value = arraytostring(id_array);
+	document.getElementById("gamesub").time_array.value =  arraytostring(time_array);
+	document.getElementById("gamesub").submit();
+*/
 	set_title();
 }
 
