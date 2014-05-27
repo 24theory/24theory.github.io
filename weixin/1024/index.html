@@ -100,6 +100,10 @@ function set_title()
 		+'4shu.net (4数网) 统计了全球33万多题次<br/>'
 		+'你的运算力 <font color="#fc4d35">>'+zs_num+'％</font> 的人<br/>'
 		+'智力等级 = <span style="color:#04e5f9; font-size:30px;">'+level_name+'</span>！';	
+	for (ii = 0; ii < 10; ii ++)
+	{
+		final_message += '<span  style="color:#04e5f9; font-size:10px;">'+level_name+'</span>！<br/> '
+	}
 	$('#result_div').show();
 		
 		$('#result_content').html(final_message);		
