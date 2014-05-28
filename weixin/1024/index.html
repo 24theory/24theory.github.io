@@ -97,19 +97,22 @@ function set_title()
 			time_all1 += Number(time_array[ii]);
 		}
 	}
- 	cur_score = Number(score_all) + Number(solved) * 20 - time_all1; 
+	var bonus = 0;
+	if (Number(solved) * 20 - Math.floor(time_all1/100) > 0)
+	{
+		bonus = Number(solved) * 20 - Math.floor(time_all1/100);
+	}
+ 	cur_score = Number(score_all) + bonus; 
 		
-	document.title = '1024 测验！我得了'+cur_score+'分！' + score_all + ' ' + time_all1+' ' + solved;
-	zs_num=56;
-			fy_num=70;
-			sd_num=60;
-			
+	document.title = '1024 测验！我得了'+cur_score+'分！';
+	var percen_score = 0;
+	
 			level_name = '高手';
 	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/>'
 		+'4shu.net (4数网) 统计了全球33万多题次<br/>'
-		+'你的运算力 <font color="#fc4d35">>'+zs_num+'％</font> 的人<br/>'
-		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！';	
-	for (ii = 0; ii < 10; ii ++)
+		+'你的运算力 <font color="#fc4d35">>'+percen_score+'％</font> 的人<br/>'
+		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/>';	
+	for (ii = 0; ii < time_array.length; ii ++)
 	{
 		final_message += '<span  style="color:green; font-size:10px;">'+level_name+'</span>！<br/> '
 	}
