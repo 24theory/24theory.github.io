@@ -241,7 +241,7 @@ function init_game( ){
 	}
  
 	game_str =game_input;  	
-	
+	alert(game_str);
 	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
 //	canvas_ele.addEventListener('keydown',handlekeydown,false);
