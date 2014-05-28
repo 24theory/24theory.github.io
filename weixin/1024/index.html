@@ -60,7 +60,7 @@
 
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
 	<p style=" text-align:center;padding-left:50px;"><img src="http://24theory.github.io/weixin/1/share.png?3" width="154"/></p>
-	<div style="width:220px;height:350px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
+	<div style="width:220px;height:300px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
 		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="$('#result_div').hide();"></i>
 
 		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
@@ -84,30 +84,94 @@ var max_number = 11;
 var show_end_tips = 1;
 
 var number_tips = 0;
+var percen_score = 0;
 
-
-function set_title()
+function set_para()
 {
 	var ii;
-	var time_all1 = 0;
+	var bonus = 0;
  	for (ii = 0; ii < time_array.length; ii ++)
 	{
 		if (time_array[ii] > 0)
 		{
-			time_all1 += Number(time_array[ii]);
+			if (Number(time_array[ii])/100 < 25)
+			{
+				bonus += (25 - Number(time_array[ii])/100 );
+			}
 		}
 	}
-	var bonus = 0;
-	if (Number(solved) * 20 - Math.floor(time_all1/100) > 0)
-	{
-		bonus = Number(solved) * 20 - Math.floor(time_all1/100);
-	}
+
  	cur_score = Number(score_all) + bonus; 
-		
-	document.title = '1024 测验！我得了'+cur_score+'分！';
-	var percen_score = 0;
+	if (cur_score <= 33)
+	{
+		percen_score = cur_score * 25 /33 ;		
+	}
+	else if (cur_score <=100)
+	{
+		percen_score = (cur_score - 33) * 25 /67 + 25;
+	}
+	else if (cur_score <=133)
+	{
+		percen_score = (cur_score - 100) * 25 /33 + 50;
+	}
+	else if (cur_score <=166){
+		percen_score = (cur_score - 133) * 23 /33 + 75;
+	}
+	else if (cur_score <=200){
+		percen_score = (cur_score - 166) * 1 /34 + 98;
+	}
+	else if (cur_score <250){
+		percen_score = (cur_score - 200) * 1 /50 + 99;
+	}
+	else 
+	{
+		percen_score = 99.99;
+	}
+	var a11 = Math.floor(percen_score /10);
+	switch(a11){
+	case 0:
+		level_name= '石头';	
+		break;
+
+	case 1:
+		level_name= '鸵鸟';	
+		break;
+	case 2:
+		level_name= '驴';	
+		break;
+	case 3:
+	level_name= '八戒';	
+		break;
+	case 4:
+	level_name= '吕布';	
+		break;
+	case 5:
+	level_name= '路人';	
+		break;
+	case 6:
+	level_name= '宋江';	
+		break;
+	case 7:
+	level_name= '诸葛亮';	
+		break;
+	case 8:
+		level_name= '牛顿';	
+		break;
+	case 9:
+		level_name= '爱因斯坦';	
+		break;
+	}
+	if (percen_score > 95)
+				level_name= '天神';	
+}
+
+function set_title()
+{
+
+	set_para();
 	
-			level_name = '高手';
+	document.title = '1024 测验！我得了'+cur_score+'分！';
+
 	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/>'
 		+'4shu.net (4数网) 统计了全球33万多题次<br/>'
 		+'你的运算力 <font color="#fc4d35">>'+percen_score+'％</font> 的人<br/>'
@@ -127,6 +191,7 @@ function set_title()
         var appid = '';
         
         function shareFriend() {
+		set_para();
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
@@ -141,6 +206,7 @@ function set_title()
             })
         }
         function shareTimeline() {
+		set_para();
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
           WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
@@ -154,6 +220,7 @@ function set_title()
             });
         }
         function shareWeibo() {
+		set_para();
 		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
             WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
