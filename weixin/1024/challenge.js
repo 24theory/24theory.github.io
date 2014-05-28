@@ -234,6 +234,8 @@ function init_game( ){
 	var TOTAL = 5;
 	game_str = new Array();
 	all_lines = new Array();
+	time_array = new Array();
+	id_array  = new Array();
 	for (ii = 1; ii < TOTAL + 1; ii ++)
 	{ 	
 		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
