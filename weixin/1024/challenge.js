@@ -239,7 +239,7 @@ function init_game( ){
 		var line = the_rank_string[ind1];
 	     var sp =  line.split(" ");
 		 all_lines.push(line);
-		game_str.push(Number(sp[1])); 
+		game_str.push(Number(sp[1]) + 1); 
 	}
  
  
