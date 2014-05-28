@@ -233,8 +233,8 @@ function init_game( ){
 	{ 	
 		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
 		var line = the_rank_string[ind1];
-	     var sp =  preg_split('/\s+/',  line);
-		game_str.push(sp[1]); 
+	     var sp =  line.split(" ");
+		game_str.push(Number(sp[1])); 
 	}
  
 	game_str =game_input;  	
