@@ -221,9 +221,22 @@ function ongame(regionID){
 		 op_focus = -1;   ongame(0);ongame(6);ongame(1);ongame(6);ongame(2);ongame(6);ongame(3);ongame(6);  game_draw(0); 
 	}
 }
-
-function init_game(game_input){
-	 
+function randomIntFromInterval(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+function init_game( ){
+	var ii; 
+	var TOTAL = 5;
+	game_str = new Array();
+	for (ii = 1; ii < TOTAL + 1; ii ++)
+	{ 	
+		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
+		var line = the_rank_string[ind1];
+	     var sp =  preg_split('/\s+/',  line);
+		game_str.push(sp[1]); 
+	}
+ 
 	game_str =game_input;  	
 	
 	canvas_ele   =  document.getElementById(canvasID) ;
