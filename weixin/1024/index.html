@@ -181,9 +181,9 @@ function set_title()
 	
 	document.title = '1024 测验！我得了'+cur_score+'分！';
 
-	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/>'
-		+'4shu.net (4数网) 统计了全球33万多题次<br/>'
-		+'你的运算力 <font color="#fc4d35">>'+percen_score+'％</font> 的人<br/>'
+	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/><br/>'
+		+'4shu.net (4数网) 统计了全球33万多题次<br/><br/>'
+		+'你的运算力 <font color="#fc4d35"> > '+percen_score+'％</font> 的人<br/>'
 		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/>';	
 	for (ii = 0; ii < time_array.length; ii ++)
 	{
@@ -193,15 +193,15 @@ function set_title()
 		
 		$('#result_content').html(final_message);		
 }
-        var imgUrl = 'http://24theory.github.io/weixin/1/2048.png';
+        var imgUrl = 'http://24theory.github.io/weixin/1/24.png';
         var lineLink = 'http://24theory.github.io/weixin/1024/';
         var descContent = '我得了'+cur_score+'分！还行吧';
-        var shareTitle = '有益智力游戏2048';
+        var shareTitle = '有益智力游戏1024';
         var appid = '';
         
         function shareFriend() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
@@ -216,7 +216,7 @@ function set_title()
         }
         function shareTimeline() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
           WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
@@ -230,7 +230,7 @@ function set_title()
         }
         function shareWeibo() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！最后一块有'+ max_number +'. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
             WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
