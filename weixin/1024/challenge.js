@@ -2,7 +2,7 @@ var game_type2  = "请不要作弊                                              
 var game_type1  = " 点这里开始!";
 
 var game_str;
- 
+var all_lines;
 var canvasID      = "canvasID";
 var canvas_ele;
 var canvas_cts;
@@ -232,11 +232,13 @@ function init_game( ){
 	var ii; 
 	var TOTAL = 5;
 	game_str = new Array();
+	all_lines = new Array();
 	for (ii = 1; ii < TOTAL + 1; ii ++)
 	{ 	
 		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
 		var line = the_rank_string[ind1];
 	     var sp =  line.split(" ");
+		 all_lines.push(line);
 		game_str.push(Number(sp[1])); 
 	}
  
