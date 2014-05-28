@@ -231,8 +231,11 @@ function init_game( ){
 	game_str = new Array();
 	for (ii = 1; ii < TOTAL + 1; ii ++)
 	{ 	
+	alert(ii);
 		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
+		alert(ind1);
 		var line = the_rank_string[ind1];
+		alert(line);
 	     var sp =  line.split(" ");
 		game_str.push(Number(sp[1])); 
 	}
