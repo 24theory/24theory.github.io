@@ -88,20 +88,9 @@ var number_tips = 0;
 
 function set_title()
 {
-	var ii;
-	var time_all1 = 0;
-	alert(solved);
-	for (ii = 0; ii < time_array.length; ii ++)
-	{
-		if (time_array[ii] > 0)
-		{
-			time_all1 += time_array[ii];
-		}
-	}
-	alert(time_array[4]);
-	cur_score = score_all + solved * 20 - time_all; 
+	
 		
-	document.title = '1024 测验！我得了'+cur_score+'分！' ;
+	document.title = '1024 测验！我得了'+cur_score+'分！';
 	zs_num=56;
 			fy_num=70;
 			sd_num=60;
