@@ -60,7 +60,7 @@
 
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
 	<p style=" text-align:center;padding-left:50px;"><img src="http://24theory.github.io/weixin/1/share.png?3" width="154"/></p>
-	<div style="width:220px;height:300px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
+	<div style="width:220px;height:280px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
 		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="$('#result_div').hide();"></i>
 
 		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
@@ -206,10 +206,10 @@ function set_title()
 	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/><br/>'
 		+'4shu.net (4数网) 统计了全球33万多题次<br/><br/>'
 		+'你的运算力 <font color="#fc4d35"> > '+percen_score+'％</font> 的人<br/>'
-		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/>';	
+		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/><br/>';	
 	for (ii = 0; ii < time_array.length; ii ++)
 	{
-		final_message += '<span  style="color:green; font-size:10px;">'+final_line[ii]+'</span>！<br/> '
+		final_message += '<span  style="color:green; font-size:10px;">'+final_line[ii]+'</span><br/> '
 	}
 	$('#result_div').show();
 		
@@ -223,7 +223,7 @@ function set_title()
         
         function shareFriend() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r' + '智力等级 = '+level_name;
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
@@ -238,7 +238,7 @@ function set_title()
         }
         function shareTimeline() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r'+ '智力等级 = '+level_name;
           WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
@@ -252,7 +252,7 @@ function set_title()
         }
         function shareWeibo() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r';
+		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r'+ '智力等级 = '+level_name;
             WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
@@ -303,7 +303,7 @@ function set_title()
 	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。
 	<div id="message" style="color:blue;"> </div>
 </div>
-  <object type="text/html"   width = 100% height = 600 px data="http://www.24lilun.com/apps/copyocf1.php"></object>	
+  <object type="text/html"   width = 100% height = 300 px data="http://www.24lilun.com/apps/copyocf1.php"></object>	
 	
 	
 	
