@@ -101,7 +101,7 @@ function set_para()
 		}
 	}
 
- 	cur_score = Number(score_all) + bonus; 
+ 	cur_score = Math.ceil(Number(score_all) + bonus); 
 	if (cur_score <= 33)
 	{
 		percen_score = cur_score * 25 /33 ;		
@@ -133,7 +133,7 @@ function set_para()
 	}
 	else
 	{
-		percen_score = percen_score.toPrecision(2);
+		percen_score = percen_score.toPrecision(4);
 	}
 	
 	var a11 = Math.floor(percen_score /10);
