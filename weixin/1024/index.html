@@ -88,6 +88,16 @@ var number_tips = 0;
 
 function set_title()
 {
+	var ii;
+	var time_all1 = 0;
+ 	for (ii = 0; ii < time_array.length; ii ++)
+	{
+		if (time_array[ii] > 0)
+		{
+			time_all1 += Number(time_array[ii]);
+		}
+	}
+ 	cur_score = Number(score_all) + Number(solved) * 20 - time_all1; 
 		
 	document.title = '1024 测验！我得了'+cur_score+'分！';
 	zs_num=56;
