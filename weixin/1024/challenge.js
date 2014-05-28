@@ -50,7 +50,21 @@ function arraytostring(array1){
 }
 
 
-function gameover(){// quit or finished all
+function gameover(){
+
+	var ii;
+	var time_all1 = 0;
+ 	for (ii = 0; ii < time_array.length; ii ++)
+	{
+		if (time_array[ii] > 0)
+		{
+			time_all1 += Number(time_array[ii]);
+		}
+	}
+ 	cur_score = Number(score_all) + Number(solved) * 20 - time_all; 
+
+
+// quit or finished all
 /*	document.getElementById("gamesub").time_now.value =  time_now;
 	document.getElementById("gamesub").solved.value =  solved;
 	document.getElementById("gamesub").unsolved.value =  unsolved;
