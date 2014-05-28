@@ -224,7 +224,7 @@ function ongame(regionID){
 
 function init_game(game_input){
 	var a = ["ddd", "dd"];
-	alert(a[0]);
+	alert(a[1]);
 	game_str =game_input;  	
 	
 	canvas_ele   =  document.getElementById(canvasID) ;
