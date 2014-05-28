@@ -65,11 +65,7 @@
 
 		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
 		<span style="font-size:36px;"><font color="#fce700">2857!</font></span>
-		天啦！在上海地区<br/>
-		您的智商 <font color="#fc4d35">>76％</font> 的人<br/>
-		反应速度 <font color="#fc4d35">>78％</font> 的人<br/>
-		协调能力 <font color="#fc4d35">>82％</font> 的人<br/><br/>
-		您属于<span style="color:#04e5f9; font-size:30px;">大师</span>级别！
+		 
 		</center>
 
 	</div>
@@ -223,7 +219,7 @@ function set_title()
         
         function shareFriend() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r' + '智力等级 = '+level_name;
+		descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
@@ -238,7 +234,7 @@ function set_title()
         }
         function shareTimeline() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r'+ '智力等级 = '+level_name;
+	descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
           WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
@@ -252,8 +248,8 @@ function set_title()
         }
         function shareWeibo() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！ 运算智力 > 全球 %'+ percen_score +' 的人. 还行吧.\n\r'+ '智力等级 = '+level_name;
-            WeixinJSBridge.invoke('shareWeibo',{
+descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+				WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
             }, function(res) {
