@@ -127,6 +127,15 @@ function set_para()
 	{
 		percen_score = 99.99;
 	}
+	if (cur_score < 0.1)
+	{	
+		percen_score = 0;
+	}
+	else
+	{
+		percen_score = percen_score.toPrecision(2);
+	}
+	
 	var a11 = Math.floor(percen_score /10);
 	switch(a11){
 	case 0:
