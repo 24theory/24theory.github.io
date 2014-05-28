@@ -188,25 +188,10 @@ function set_para()
 					thistime = Number(time_array[jj]);
 				}
 			}
-			var std1 = Number(sp[6]) / 0.52;
-			var median1 = Number(sp[2]) 	+ 650; 			
-			if (thistime <= median1)
-			{
-				this_per = 1.0 -  0.1;//prob ($median1/100, ($median1 - $std1)/100, $time_v[$ii]/100);
-			}
+			if (thistime > 0)
+				final_line.push('难度 ' +(ii+1) + '('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : ' + thistime.toPrecision(3) +' 秒<br/>');
 			else
-			{
-				this_per =  0.1; //prob ($median1/100, ($median1 - 3 * $std1)/100, (2 * $median1 - $time_v[$ii])/100);
-			}
-			if (this_per >= 0.99)
-				this_per= 0.99; 
-			if (this_per < (1- Number(sp[4])/Number(sp[3]))/2)
-				this_per = (1- Number(sp[4])/Number(sp[3]))/2;
-			if (thistime <=0)
-				this_per = 0;
-			this_per = Math.floor(this_per * 100);			
-			final_line.push('难度 ' +(ii+1) + ' : 你战胜了全球'+ this_per + '% 的人 <br/>');
-			
+				final_line.push('难度 ' +(ii+1) + '('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : 没有算出来<br/>');
 		}
 	}
 }
