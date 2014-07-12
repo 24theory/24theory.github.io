@@ -148,15 +148,15 @@ function game_order(){ // pick up the order of games
 	return final_order;
 } 
 function grab_quad_sol(this_id){
-	var res = new Array();
-	var pos = the_location[this_id];
+	var res = new Array(); 
+	var pos = the_string.search("]"); 
 	var ii = pos;
 	while(the_string[ii] != "[") {ii--;}
 	ii ++;
 	res.push(the_string.substring(ii, pos));
 	var jj = pos;
 	while(the_string[jj] != "[") {jj++;}
-	res.push(the_string.substring(pos + 2, jj-1));
+	res.push(the_string.substring(pos + 2, jj-1)); 
 	return res;
 }
 
