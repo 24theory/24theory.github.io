@@ -169,28 +169,9 @@ function set_para()
 	}
 	if (percen_score > 95)
 				level_name= '天神';	
-	if (time_array.length == 5)
-	{
-		final_line = new Array();
-		var final_time = new Array();
-		var ii, jj; 
-		for (ii = 0; ii < 5; ii ++)
-		{
-			var sp =  all_lines[ii].split(" ");
-			var thistime, this_per; 
-			for (jj = 0; jj < 5; jj ++)
-			{
-				if (this_order[jj] == ii)
-				{					
-					thistime = Number(time_array[jj]);
-				}
-			}
-			if (thistime > 0)
-				final_line.push('难度 ' +(ii+1) + ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : ' + (thistime/100).toPrecision(3) +' 秒');
-			else
-				final_line.push('难度 ' +(ii+1) + ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : 没有算出来');
-		}
-	}
+ 
+	final_line = new Array();
+	final_line.push( ' ('+sp[8]+ ' ' + sp[9]+ ' ' +sp[10]+ ' ' +sp[11]+ ') : ' + (thistime/100).toPrecision(3) +' 秒');
 }
 
 function set_title()
