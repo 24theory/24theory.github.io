@@ -64,7 +64,7 @@ function gameover(){
 	document.getElementById("gamesub").time_array.value =  arraytostring(time_array);
 	document.getElementById("gamesub").submit();
 */
-//	set_title();
+	set_title();
 	init_game(gamestr);
 }
 
