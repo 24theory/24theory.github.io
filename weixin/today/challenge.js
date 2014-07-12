@@ -338,7 +338,7 @@ function start_game(){
 	game_type = 1;
 	time_now = 0;	
 	solved   = 0;
-	unsolved = game_str.length;
+	unsolved = 1;
 	score_all = 0;
 	this_quad = 0;  // start from the first game
 	this_order = game_order();
