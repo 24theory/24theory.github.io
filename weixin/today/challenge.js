@@ -65,7 +65,7 @@ function gameover(){
 	document.getElementById("gamesub").submit();
 */
 	set_title();
-	init_game();
+//	init_game();
 }
 
 function new_quad(){
