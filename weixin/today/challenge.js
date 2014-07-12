@@ -64,7 +64,8 @@ function gameover(){
 	document.getElementById("gamesub").time_array.value =  arraytostring(time_array);
 	document.getElementById("gamesub").submit();
 */
-	set_title();
+window.top.location.href = "http://www.24lilun.com/";
+//	set_title();
 //	init_game();
 }
 
