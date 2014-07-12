@@ -39,6 +39,8 @@ var rect_sol, rect_no_sol;
 var ep = 0.000001;
 var num_ratio = 2/5, marg_ratio =  0.05, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
+var the_string="";
+
 
 function arraytostring(array1){
 	var str1 = " ";
@@ -229,9 +231,10 @@ function randomIntFromInterval(min,max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
-function init_game( ){
+function init_game(all_inputs ){
+	the_string = all_inputs;
 	var ii; 
-	var TOTAL = 5;
+	var TOTAL = 1;
 	game_str = new Array();
 	all_lines = new Array();
 	time_array = new Array();
@@ -241,8 +244,7 @@ function init_game( ){
 		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
 		var line = the_rank_string[ind1];
 	     var sp =  line.split(" ");
-		 all_lines.push(line);
-		game_str.push(Number(sp[1]) + 1); 
+		 all_lines.push("line");
 	}
  
  
