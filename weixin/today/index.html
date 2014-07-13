@@ -184,9 +184,10 @@ function set_title()
 
 	set_para();
 	
-	document.title = '1024 测验！我得了'+cur_score+'分！';
+	document.title = '不错！ 你做出了今天的24点题目';
 
 	var final_message = '今天是 <br>' + '今天的24点题目你用时' + '秒 <br> 点右上角分享, 挑战你的小伙伴!';
+	final_message += '点 X 进行1024测验!';
 	$('#result_div').show();
 		
 		$('#result_content').html(final_message);		
