@@ -186,14 +186,7 @@ function set_title()
 	
 	document.title = '1024 测验！我得了'+cur_score+'分！';
 
-	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/><br/>'
-		+'4shu.net (4数网) 统计了全球33万多题次<br/><br/>'
-		+'你的运算力 <font color="#fc4d35"> > '+percen_score+'％</font> 的人<br/>'
-		+'智力等级 = <span style="color:#04e5f9; font-size:20px;">'+level_name+'</span>！<br/><br/>';	
-	for (ii = 0; ii < time_array.length; ii ++)
-	{
-		final_message += '<span  style="color:green; font-size:10px;">'+final_line[ii]+'</span><br/> '
-	}
+	var final_message = '今天是 <br>' + '今天的24点题目你用时' + '秒 <br> 点右上角分享, 挑战你的小伙伴!';
 	$('#result_div').show();
 		
 		$('#result_content').html(final_message);		
