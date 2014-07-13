@@ -1,6 +1,6 @@
 var game_type2  = "请不要作弊                                                   ";
 var game_type1  = " 点这里开始!";
-
+var timerthis;
 var game_str;
 var all_lines;
 var canvasID      = "canvasID";
@@ -442,7 +442,8 @@ function start_game(){
 	rect_sol = new Array(b_ratio * width, b_ratio * height, width - 2 * b_ratio * width, height - 2 * b_ratio * height);
 	rect_no_sol = new Array( (b_ratio1 + b_ratio )* width, height - (b_ratio1 + 2 * b_ratio) * height, width - 2* (b_ratio1 +b_ratio)* width, b_ratio * height);
 	game_draw(0);
-	setInterval(function(){tickclock()},10);
+	clearInterval(timerthis);
+	timerthis = setInterval(function(){tickclock()},10);
 //	tickclock();
 }
 function tickclock(){
