@@ -65,7 +65,6 @@ function gameover(){
 	document.getElementById("gamesub").submit();
 */
 	set_title();
-window.location.href = 'http://24theory.github.io/weixin/1024/';
 //	init_game(gamestr);
 }
 
