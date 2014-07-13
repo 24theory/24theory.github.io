@@ -62,7 +62,7 @@
 <div style="background:rgba(0,0,0,0.9);position:absolute;top:0px; left:0px; width:100%;height:100%;z-index:10000;display:none;" id="result_div">
 	<p style=" text-align:center;padding-left:50px;"><img src="http://24theory.github.io/weixin/1/share.png?3" width="154"/></p>
 	<div style="width:220px;height:280px; top:20px; left:25px;background:rgba(0,0,0,0.3);border:1px rgba(255,255,255,0.3) solid;border-radius:6px;padding:15px; text-align:center; position:relative;">
-		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="window.top.location.href = \"http://www.24lilun.com/\"";"></i>
+		<i style="position:absolute; background:url(http://24theory.github.io/weixin/1/close.png); width:29px;height:29px; background-size:29px 29px; top:-10px;right:-14px;" onclick="forward1()";></i>
 
 		<center style="font-size:17px;margin-top:5px;color:#eee;" id="result_content">
 		<span style="font-size:36px;"><font color="#fce700">2857!</font></span>
@@ -175,7 +175,10 @@ function set_para()
 	var thistime = 10000;
 	final_line.push('dd'+ (thistime/100).toPrecision(3));
 }
-
+function forward1()
+{
+	window.top.location.href = "http://www.24lilun.com/";
+}
 function set_title()
 {
 
