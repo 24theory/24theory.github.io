@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
-<title>1024! 4shu.net 24点游戏网</title>
+<title>今日24点! 4shu.net 24点游戏网</title>
 
 <link href="http://24theory.github.io/weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 
-<meta property="og:title" content="1024 game"/>
-<meta property="og:site_name" content="1024 game"/>
-<meta property="og:description" content="solve 10 math 24 puzzles!"/>
+<meta property="og:title" content="24 game"/>
+<meta property="og:site_name" content="24 game"/>
+<meta property="og:description" content="今日24点!"/>
 
 
 <script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
@@ -25,7 +25,7 @@
 <style>p1 {font-size:25px; } </style>
    
 	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
-	5个24点题目, 测智商！<p1><a href="http://24theory.github.io/weixin/24lilun.html" target= "_blank"><span style="color:red;">4shu.net</span></a></p1></div>
+	今天的高难度24点题目！<p1><a href="http://24theory.github.io/weixin/24lilun.html" target= "_blank"><span style="color:red;">4shu.net</span></a></p1></div>
 
 
   
@@ -188,7 +188,7 @@ function set_title()
 
 	var final_message = '今天是 <br>' + '今天的24点题目你用时' + game_tick/100 + '秒 <br> 点右上角分享, 挑战你的小伙伴!';
 	final_message += '<br>点 X 进行1024测验!';
-	final_message += ' 别忘了加我们的微信号 4shu, 我们是史上最智能的微信公共号, 对我说4个数, 我给算24点解法哦';
+	final_message += ' 别忘了加我们的微信号 4shu, 我们是史上最智能的微信公共号, 对我说4个数, 我给算24点哦';
 	$('#result_div').show();
 		
 		$('#result_content').html(final_message);		
@@ -219,8 +219,11 @@ function set_title()
         }
         function shareTimeline() {
 		set_para();
-	descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
-          WeixinJSBridge.invoke('shareTimeline',{
+	if (solved == 1)
+			descContent = '今天的(4shu.net)24点我用了' + game_tick1/100 +'秒, 你来挑战一下?'
+		else
+			descContent = '今天的(4shu.net)24点有难度, 你来做一下?'
+               WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
                 "img_height": "200",
@@ -233,8 +236,11 @@ function set_title()
         }
         function shareWeibo() {
 		set_para();
-descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
-				WeixinJSBridge.invoke('shareWeibo',{
+	if (solved == 1)
+			descContent = '今天的(4shu.net)24点我用了' + game_tick1/100 +'秒, 你来挑战一下?'
+		else
+			descContent = '今天的(4shu.net)24点有难度, 你来做一下?'
+           				WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
             }, function(res) {
