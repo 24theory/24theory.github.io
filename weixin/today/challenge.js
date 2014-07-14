@@ -242,10 +242,6 @@ function init_game(all_inputs ){
 	id_array  = new Array();
 	for (ii = 1; ii < TOTAL + 1; ii ++)
 	{ 	
-		var ind1 = randomIntFromInterval(  Math.ceil(1361 * (ii-1) /TOTAL ), Math.floor(1361 * ii /TOTAL ));
-		var line = the_rank_string[ind1];
-	     var sp =  line.split(" ");
-		 all_lines.push("line");
 	}
  
  
