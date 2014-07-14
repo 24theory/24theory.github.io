@@ -201,7 +201,10 @@ function set_title()
         
         function shareFriend() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+		if (solved == 1)
+			descContent = '今天的(4shu.net)24点我用了' + game_tick/100 +'秒, 你来挑战一下?'
+		else
+			descContent = '今天的(4shu.net)24点有难度, 你来做一下?'
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
