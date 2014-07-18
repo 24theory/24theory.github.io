@@ -184,12 +184,16 @@ function set_title()
 {
 
 	set_para();
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
 	
+
 	document.title = '不错！ 你做出了今天的24点题目';
 
-	var final_message = '今天是 <br>' + '今天的24点题目你用时' + game_tick/100 + '秒 <br> 点右上角分享, 挑战你的小伙伴!';
-	final_message += '<br>点 X 进行1024测验!';
-	final_message += ' 别忘了加我们的微信号 4shu, 我们是史上最智能的微信公共号, 对我说4个数, 我给算24点哦';
+	var final_message = '今天是' + mm +'月' +dd +'日 <br>' + '今天的24点题目你用时' + game_tick/100 + '秒 <br> 别忘了分享, 挑战你的小伙伴!';
+	final_message += '<br>点右上的X 进行1024测验!';
+	final_message += ' 加我们4shu.net的微信号 <strong style="color:red">4shu</strong>, 我们是史上最智能的微信公共号, 对我说4个数, 我给算24点哦';
 	$('#result_div').show();
 		
 		$('#result_content').html(final_message);		
