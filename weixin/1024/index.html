@@ -222,7 +222,7 @@ function set_title()
         
         function shareFriend() {
 		set_para();
-		descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+		descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
@@ -237,7 +237,7 @@ function set_title()
         }
         function shareTimeline() {
 		set_para();
-	descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+	descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
           WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
                 "img_width": "200",
@@ -251,7 +251,7 @@ function set_title()
         }
         function shareWeibo() {
 		set_para();
-descContent = '我得了'+cur_score+'分！\n\r 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
+descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
 				WeixinJSBridge.invoke('shareWeibo',{
                 "content": descContent,
                 "url": lineLink,
