@@ -26,7 +26,7 @@
 <style>p1 {font-size:25px; } </style>
    
 	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
-	今天的高难度24点！微信号:<p1><span style="color:blue;">4shu</span></p1></div>
+	今天的高难度24点！微信号:<p1><span style="color:blue;"><a href="javascript:viewProfile();"> 4shu</a></span></p1></div>
 
 
   
@@ -203,7 +203,12 @@ function set_title()
         var descContent = '我得了'+cur_score+'分！还行吧';
         var shareTitle = '今日高难度24点';
         var appid = '';
-        
+        function viewProfile() {
+		typeof WeixinJSBridge != "undefined" && WeixinJSBridge.invoke && WeixinJSBridge.invoke("profile", {
+		username: user_name,
+		scene: "57"
+		});
+	}
         function shareFriend() {
 		set_para();
 		if (solved == 1)
