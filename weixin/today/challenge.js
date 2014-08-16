@@ -285,7 +285,7 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 	if (border_wid1>0)
 		canvas_cts.strokeRect(rect1[0] + border_wid1/ 2, rect1[1] + border_wid1/2, rect1[2] - border_wid1, rect1[3] - border_wid1);
 }
-function draw_rec1t(rect1, color1, border_wid1, color2 ){
+function draw_rect1(rect1, color1, border_wid1, color2 ){
  	canvas_cts.lineWidth   = border_wid1;
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
