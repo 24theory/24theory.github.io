@@ -259,6 +259,7 @@ function init_game(all_inputs ){
        xywh_init1 = new Array( width * percent_w_init / 2,   height * (percent_h_init / 4 + 0.5), 	  width * ( 1- percent_w_init),    height * ( 1- percent_h_init) / 2);
 	canvas_cts = canvas_ele.getContext( "2d");
 	 start_game();
+	 draw_rect(Array(0,0, width, height), "#fff", 0, "#000");
 	game_draw(0);
 }
 function click_ID(x,y, rect_array){
