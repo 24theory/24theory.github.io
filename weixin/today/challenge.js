@@ -516,7 +516,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
-	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+//	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
@@ -576,6 +576,20 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 				draw_text(Array(op_rect1[0]+ op_rect1[3]/ratx[ii], op_rect1[1] + op_rect1[3]/raty[ii]), op_array[ii] , "#666", "bold " + Math.round(op_rect1[2]/1) +"px sans-serif");			
 		}			
 	} 
+	var rest_rect = new Array();
+	for (ii = 0; ii < 4; ii ++)
+	{
+		var flag = 0; 
+		for(jj = 0; jj < quad.length(); jj ++)
+		{ if (quad_pos[jj] == ii)
+			{flag =1; break;}
+		}
+		if (flag==0)
+			rest_rect.push(ii);
+		
+	}
+	for (ii= 0; ii < rest_rect.length; ii++)
+		draw_rect(num_rect[rest_rect[ii]],  "#fff", 0, "#FF0000"); 
 	for (ii = 0; ii < quad.length; ii ++){ 
 		var num_rect1 = num_rect[quad_pos[ii]];
 		var text_string =  num_to_string (quad[ii]); 
