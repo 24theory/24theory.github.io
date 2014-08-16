@@ -272,8 +272,13 @@ function click_ID(x,y, rect_array){
 	return -1 ;
 }
 function draw_rect(rect1, color1, border_wid1, color2 ){
-	canvas_cts.fillStyle = color1;   // button color
-	canvas_cts.fillRect (rect1[0], rect1[1], rect1[2], rect1[3]);	
+	if (color1 !="fff")
+	{
+		canvas_cts.fillStyle = color1;   // button color
+		canvas_cts.fillRect (rect1[0], rect1[1], rect1[2], rect1[3]);	
+	}
+	else
+		canvas_cts.clearRect (rect1[0], rect1[1], rect1[2], rect1[3]);	
 	canvas_cts.lineWidth   = border_wid1;
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
