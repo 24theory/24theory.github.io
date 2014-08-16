@@ -580,17 +580,17 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	for (ii = 0; ii < 4; ii ++)
 	{
 		var flag = 0; 
-		for(jj = 0; jj < quad_pos.length(); jj ++)
+		for(jj = 0; jj < quad_pos.length; jj ++)
 		{ if (quad_pos[jj] == ii)
 			{flag =1; break;}
 		}
 		if (flag==0)
-		{	rest_rect.push(ii); 	alert("dd");}
+		{	rest_rect.push(ii); 	 }
 		
 	}
-alert("cc");
-	for (ii= 0; ii < rest_rect.length; ii++)
-		draw_rect(num_rect[rest_rect[ii]],  "#fff", 0, "#FF0000"); 
+ 	for (ii= 0; ii < rest_rect.length; ii++)
+	{	draw_rect(num_rect[rest_rect[ii]],  "#aaa", 0, "#FF0000"); 
+	}
 	for (ii = 0; ii < quad.length; ii ++){ 
 		var num_rect1 = num_rect[quad_pos[ii]];
 		var text_string =  num_to_string (quad[ii]); 
