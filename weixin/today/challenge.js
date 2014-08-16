@@ -585,10 +585,10 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 			{flag =1; break;}
 		}
 		if (flag==0)
-		{	rest_rect.push(ii); 	alert("dd".ii);}
+		{	rest_rect.push(ii); 	alert("dd");}
 		
 	}
-
+alert("cc");
 	for (ii= 0; ii < rest_rect.length; ii++)
 		draw_rect(num_rect[rest_rect[ii]],  "#fff", 0, "#FF0000"); 
 	for (ii = 0; ii < quad.length; ii ++){ 
