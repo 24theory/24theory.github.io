@@ -285,7 +285,12 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 	if (border_wid1>0)
 		canvas_cts.strokeRect(rect1[0] + border_wid1/ 2, rect1[1] + border_wid1/2, rect1[2] - border_wid1, rect1[3] - border_wid1);
 }
-
+function draw_rec1t(rect1, color1, border_wid1, color2 ){
+ 	canvas_cts.lineWidth   = border_wid1;
+	canvas_cts.strokeStyle  = color2;   // button color
+	if (border_wid1>0)
+		canvas_cts.strokeRect(rect1[0] + border_wid1/ 2, rect1[1] + border_wid1/2, rect1[2] - border_wid1, rect1[3] - border_wid1);
+}
 function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
@@ -536,14 +541,14 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	//draw_rect(rect_skip ,  "#fff", 3, "#00f");
 	//draw_text(Array(rect_skip[0]+rect_skip[2]/2.6, rect_skip[1] + rect_skip[3]/1.6), "跳 过", "#00f", "bold " + Math.round(rect_skip[2]/6) +"px sans-serif");
 	var colorredo = "#000", widthredo = 5;
-	if (future_steps.length ==0){ colorredo = "#aaa"; widthredo = 2;}
-	draw_rect(rect_redo ,  "#fff", widthredo , colorredo );
+	if (future_steps.length ==0){ colorredo = "#aaa";  }
+	draw_rect1(rect_redo ,  "#fff", widthredo , colorredo );
 	var redo = "  \u2192";
 	draw_text(Array(rect_redo[0], rect_redo[1] + rect_redo[3]/1.2), redo, colorredo , "bold " + Math.round(rect_redo[2]/2) +"px sans-serif");
 
 	var colorundo = "#000", widthundo = 5;
-	if (past_steps.length ==0 && op_focus < 0 ){ colorundo = "#aaa"; widthundo = 2;}
-	draw_rect(rect_undo ,  "#fff", widthundo,colorundo);
+	if (past_steps.length ==0 && op_focus < 0 ){ colorundo = "#aaa";  }
+	draw_rect1(rect_undo ,  "#fff", widthundo,colorundo);
 	var undo = "  \u2190";
 	draw_text(Array(rect_undo[0], rect_undo[1] + rect_undo[3]/1.2), undo ,colorundo, "bold " + Math.round(rect_undo[2]/2) +"px sans-serif");
 
@@ -554,12 +559,12 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	var raty = new Array(1.2,1.3,1.2,1.2, 1.2 );
 
 	var coloraddall = "#00a";
-  	draw_rect(rect_addall ,  "#fff", 2, "#666" );
+  	draw_rect1(rect_addall ,  "#fff", 2, "#666" );
 	var addall = "\u2295"
  	draw_text(Array(rect_addall [0]+ 0*rect_addall [3]/ratx[4], rect_addall [1] + rect_addall [3]/raty [4]), addall , coloraddall , "bold " + Math.round(rect_addall[2]/1) +"px sans-serif");
 
 	var colormultiall = "#a0a";
- 	draw_rect(rect_multiall ,  "#fff", 2, "#666" );
+ 	draw_rect1(rect_multiall ,  "#fff", 2, "#666" );
 	var addall = "\u2297"
 	draw_text(Array(rect_multiall [0]+ 0* rect_multiall [3]/ratx[4], rect_multiall [1] + rect_multiall [3]/raty [4]), addall , colormultiall , "bold " + Math.round(rect_multiall [2]/1) +"px sans-serif");
 
@@ -569,11 +574,11 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	{// draw ops
 		var op_rect1 = op_rect[ii];
 		if (ii == op_focus){
-			draw_rect(op_rect1,  "#fff", 6, "#000");
+			draw_rect1(op_rect1,  "#fff", 6, "#000");
 			draw_text(Array(op_rect1[0]+ op_rect1[3]/ratx[ii], op_rect1[1] + op_rect1[3]/raty[ii]), op_array[ii] , "#000", "bold " + Math.round(op_rect1[2]/1) +"px sans-serif");
 		}
 		else{
-				draw_rect(op_rect1,  "#fff", 1, "#666");
+				draw_rect1(op_rect1,  "#fff", 6, "#bbb");
 				draw_text(Array(op_rect1[0]+ op_rect1[3]/ratx[ii], op_rect1[1] + op_rect1[3]/raty[ii]), op_array[ii] , "#666", "bold " + Math.round(op_rect1[2]/1) +"px sans-serif");			
 		}			
 	} 
