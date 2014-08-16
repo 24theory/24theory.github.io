@@ -580,7 +580,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	for (ii = 0; ii < 4; ii ++)
 	{
 		var flag = 0; 
-		for(jj = 0; jj < quad.length(); jj ++)
+		for(jj = 0; jj < quad_pos.length(); jj ++)
 		{ if (quad_pos[jj] == ii)
 			{flag =1; break;}
 		}
