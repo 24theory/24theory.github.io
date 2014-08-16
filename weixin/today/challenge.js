@@ -559,12 +559,12 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	var raty = new Array(1.2,1.3,1.2,1.2, 1.2 );
 
 	var coloraddall = "#00a";
-  	//draw_rect1(rect_addall ,  "#fff", 2, "#666" );
+  	 draw_rect1(rect_addall ,  "#fff", 2, "#bbb" );
 	var addall = "\u2295"
  	draw_text(Array(rect_addall [0]+ 0*rect_addall [3]/ratx[4], rect_addall [1] + rect_addall [3]/raty [4]), addall , coloraddall , "bold " + Math.round(rect_addall[2]/1) +"px sans-serif");
 
 	var colormultiall = "#a0a";
- 	//draw_rect1(rect_multiall ,  "#fff", 2, "#666" );
+ 	 draw_rect1(rect_multiall ,  "#fff", 2, "#bbb" );
 	var addall = "\u2297"
 	draw_text(Array(rect_multiall [0]+ 0* rect_multiall [3]/ratx[4], rect_multiall [1] + rect_multiall [3]/raty [4]), addall , colormultiall , "bold " + Math.round(rect_multiall [2]/1) +"px sans-serif");
 
