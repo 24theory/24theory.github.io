@@ -515,7 +515,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
-	if (was_sol  ==1 and status1 ==1){//}
+	if (was_sol  ==1 && status1 !=4){//}
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		was_sol  = 0; 
 	}
