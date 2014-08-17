@@ -617,7 +617,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 			}
 		}
 		else{
-			draw_rect(num_rect1,  "#fff", 1, "#55B72B"); //#0F7100 darker
+			draw_rect(num_rect1,  "#fff", 2, "#55B72B"); //#0F7100 darker
 			draw_text(Array(xy_fontsize[0], xy_fontsize[1]), text_string, "#55B72B", "bold " + xy_fontsize[2] + "px sans-serif");
 		}
 	}	
