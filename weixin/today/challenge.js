@@ -38,7 +38,7 @@ var rect_quit, rect_skip, rect_undo, rect_redo, rect_addall, rect_multiplyall;
 var rect_all, rect_QUIT_array; // rect_all is for game,  rect_QUIT_array is for quitting
 var rect_sol, rect_no_sol;
 var ep = 0.000001;
-var num_ratio = 2/5, marg_ratio =  0.1, rect_thin_width = 3, rect_fat_width = 10;
+var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
 var the_string="";
 
