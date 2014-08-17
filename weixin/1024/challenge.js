@@ -84,6 +84,7 @@ function new_quad(){
 	num_focus = -1; // nothing on focus
 	past_steps = new Array();  //  no past yet
 	future_steps = new Array(); // no future yet
+	draw_rect(Array(0,0, width, height), "#fff", 0, "#000");
 }
 
 function solved1(solvedone){ // just solved one quad, move on to the next one
@@ -513,7 +514,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
-	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+//	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
