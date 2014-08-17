@@ -1,3 +1,4 @@
+var click_op = 0;
 var game_type2  = "请不要作弊                                                   ";
 var game_type1  = " 点这里开始!";
 var timerthis;
@@ -190,6 +191,7 @@ function ongame(regionID){
 	}
 	else if (regionID <8){ 
 		var op_ID = regionID - 4;
+		click_op = 1; 
 		if (num_focus >=0 && quad.length > 1) {op_focus = op_ID;} // if some number is chosen and there are more than 2 nums left, then highlight the op
 		else{return;} // no num is chosen, do nothing here
 	}
@@ -595,6 +597,11 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 				draw_text(Array(op_rect1[0]+ op_rect1[3]/ratx[ii], op_rect1[1] + op_rect1[3]/raty[ii]), op_array[ii] , "#bbb", "bold " + Math.round(op_rect1[2]/1) +"px sans-serif");			
 		}			
 	} 
+	if (click_op == 1)
+	{
+		click_op = 0; 
+		return; 
+	}
 	var rest_rect = new Array();
 	for (ii = 0; ii < 4; ii ++)
 	{
