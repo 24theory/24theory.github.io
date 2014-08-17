@@ -1,3 +1,4 @@
+var click_op = 0;
 var game_type2  = "请不要作弊                                                   ";
 var game_type1  = " 点这里开始!";
 var timerthis;
@@ -37,7 +38,7 @@ var rect_quit, rect_skip, rect_undo, rect_redo, rect_addall, rect_multiplyall;
 var rect_all, rect_QUIT_array; // rect_all is for game,  rect_QUIT_array is for quitting
 var rect_sol, rect_no_sol;
 var ep = 0.000001;
-var num_ratio = 2/5, marg_ratio =  0.05, rect_thin_width = 3, rect_fat_width = 10;
+var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
 
 function arraytostring(array1){
@@ -187,6 +188,7 @@ function ongame(regionID){
 	}
 	else if (regionID <8){ 
 		var op_ID = regionID - 4;
+		click_op = 1; 
 		if (num_focus >=0 && quad.length > 1) {op_focus = op_ID;} // if some number is chosen and there are more than 2 nums left, then highlight the op
 		else{return;} // no num is chosen, do nothing here
 	}
@@ -571,6 +573,12 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 				draw_text(Array(op_rect1[0]+ op_rect1[3]/ratx[ii], op_rect1[1] + op_rect1[3]/raty[ii]), op_array[ii] , "#666", "bold " + Math.round(op_rect1[2]/1) +"px sans-serif");			
 		}			
 	} 
+	if (click_op == 1)
+	{
+		click_op = 0; 
+		return; 
+	}
+	
 	for (ii = 0; ii < quad.length; ii ++){ 
 		var num_rect1 = num_rect[quad_pos[ii]];
 		var text_string =  num_to_string (quad[ii]); 
