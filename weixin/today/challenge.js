@@ -422,7 +422,7 @@ function start_game(){
 	rect_tmpv = new Array();
 	for (ii = 0; ii < 3; ii ++){
 		var tmp1 =  N1 * width, tmp2 = width - 2* N1* width + N1 *  marg_ratio * N1;
-		rect1 = new Array( width - tmp2, (ii + 1.5) * tmp1/2, tmp2, tmp1/4);
+		rect1 = new Array( width - tmp2, (ii + 1.25) * tmp1/2, tmp2, tmp1/4);
 		rect_tmpv.push(rect1);
 	}
 
