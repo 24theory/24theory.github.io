@@ -280,13 +280,13 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 	}
 	else
 		canvas_cts.clearRect (Math.round(rect1[0]), Math.round(rect1[1]), Math.round(rect1[2]), Math.round(rect1[3]));	
-	canvas_cts.lineWidth   = Math.round(border_wid1);
+	canvas_cts.lineWidth   = Math.floor(border_wid1);
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
 		canvas_cts.strokeRect(Math.round(rect1[0] + border_wid1/ 2), Math.round(rect1[1] + border_wid1/2), Math.round(rect1[2] - border_wid1), Math.round(rect1[3] - border_wid1));
 }
 function draw_rect1(rect1, color1, border_wid1, color2 ){
- 	canvas_cts.lineWidth   = Math.round(border_wid1);
+ 	canvas_cts.lineWidth   = Math.floor(border_wid1);
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
 		canvas_cts.strokeRect(Math.round(rect1[0] + border_wid1/ 2), Math.round(rect1[1] + border_wid1/2), Math.round(rect1[2] - border_wid1), Math.round(rect1[3] - border_wid1));
