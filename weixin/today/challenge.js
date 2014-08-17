@@ -615,7 +615,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		
 	}
  	for (ii= 0; ii < rest_rect.length; ii++)
-	{	draw_rect(num_rect[rest_rect[ii]],  "#fff", 6, "#fff"); 
+	{	draw_rect(num_rect[rest_rect[ii]],  "#fff", 0, "#fff"); 
 	}
 	for (ii = 0; ii < quad.length; ii ++){ 
 		var num_rect1 = num_rect[quad_pos[ii]];
