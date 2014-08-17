@@ -1,3 +1,4 @@
+var was_sol = 0;
 var click_op = 0;
 var game_type2  = "请不要作弊                                                   ";
 var game_type1  = " 点这里开始!";
@@ -514,7 +515,10 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 //		draw_text(Array(rect_score[0], rect_score[1] + rect_score[3]/1.9), "Score:" + Math.round(score_all), "#000", "bold " + Math.round(rect_score[2]/5) +"px sans-serif");
 		return;	
 	}
-//	draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+	if (was_sol  ==1 and status1 ==1){//}
+		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+		was_sol  = 0; 
+	}
 	draw_rect(Array(rect_clock[0],rect_clock[1],rect_clock[2] * 1.3,rect_clock[3]) ,  "#fff", 0, "#00f");
 	draw_text(Array(rect_clock[0], rect_clock[1] + rect_clock[3]/1.9), "用时: " + time_now, "#000", "bold " + Math.round(rect_clock[2]/5) +"px sans-serif");
 	draw_rect(Array(rect_score[0],rect_score[1],rect_score[2] * 1.3,rect_score[3]) ,  "#fff", 0, "#00f");
@@ -652,7 +656,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		// quad_all_prev[1]
 		draw_text(Array(rect_no_sol[0] * 1.9, rect_no_sol[1] * 1.15), "请再也不要显示答案了", "#888", "bold " + Math.round(rect_no_sol[3]/4) +"px sans-serif");
 */
-
+		was_sol  = 1; 
 		var text_never_show_sol ="     再也不要显示答案了         ";
 		draw_rect(rect_sol, "#fff", 2, "#bbb");
 		draw_rect(rect_no_sol, "#fff", 4, "#bbb");
