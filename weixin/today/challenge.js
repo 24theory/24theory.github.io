@@ -276,25 +276,25 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 	if (color1 !="fff")
 	{
 		canvas_cts.fillStyle = color1;   // button color
-		canvas_cts.fillRect (rect1[0], rect1[1], rect1[2], rect1[3]);	
+		canvas_cts.fillRect (Math.round(rect1[0]), Math.round(rect1[1]), Math.round(rect1[2]), Math.round(rect1[3]));	
 	}
 	else
-		canvas_cts.clearRect (rect1[0], rect1[1], rect1[2], rect1[3]);	
+		canvas_cts.clearRect (Math.round(rect1[0]), Math.round(rect1[1]), Math.round(rect1[2]), Math.round(rect1[3]));	
 	canvas_cts.lineWidth   = border_wid1;
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
-		canvas_cts.strokeRect(rect1[0] + border_wid1/ 2, rect1[1] + border_wid1/2, rect1[2] - border_wid1, rect1[3] - border_wid1);
+		canvas_cts.strokeRect(Math.round(rect1[0] + border_wid1/ 2), Math.round(rect1[1] + border_wid1/2), Math.round(rect1[2] - border_wid1), Math.round(rect1[3] - border_wid1));
 }
 function draw_rect1(rect1, color1, border_wid1, color2 ){
  	canvas_cts.lineWidth   = border_wid1;
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
-		canvas_cts.strokeRect(rect1[0] + border_wid1/ 2, rect1[1] + border_wid1/2, rect1[2] - border_wid1, rect1[3] - border_wid1);
+		canvas_cts.strokeRect(Math.round(rect1[0] + border_wid1/ 2), Math.round(rect1[1] + border_wid1/2), Math.round(rect1[2] - border_wid1), Math.round(rect1[3] - border_wid1));
 }
 function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
-	canvas_cts.fillText(text1, xy_array[0], xy_array[1]);
+	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
 }
 function text_in_rect(rect1, text_string)
 { // given text string and the rect, return the ideal x,y and fontsize
