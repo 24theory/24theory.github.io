@@ -178,7 +178,8 @@ function set_para()
 }
 function forward1()
 {
-	window.top.location.href = "http://24theory.github.io/weixin/1024/";
+	WeixinJSBridge.invoke('closeWindow',{},function(res){  });
+	//window.top.location.href = "http://24theory.github.io/weixin/1024/";
 }
 function set_title()
 {
