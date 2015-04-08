@@ -4,9 +4,8 @@ var canvas_ele;
 var width, height;
 var status1;
 function init_game( ){
-	alert("dd1");
   	canvas_ele   =  document.getElementById(canvasID) ;
-	canvas_ele.addEventListener("click", onclick1, false);
+//	canvas_ele.addEventListener("click", onclick1, false);
  	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus();
 	width  = canvas_ele.width;
