@@ -3,7 +3,7 @@ var canvasID      = "canvasID";
 var canvas_ele;
 var width, height;
 var status1;
-function init_game(all_inputs ){
+function init_game( ){
 	alert("dd1");
   	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
