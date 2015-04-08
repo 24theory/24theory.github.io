@@ -17,9 +17,9 @@ function init_game(all_inputs ){
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-		draw_text (Array(xywh_init1[0] + xywh_init1[2] /5, xywh_init1[1] + xywh_init1[3] /1.9),game_type1, "#fff",  "bold " + Math.round(xywh_init1[2]/10) +"px sans-serif");
-		
-	return;
+		//draw_text (Array(xywh_init1[0] + xywh_init1[2] /5, xywh_init1[1] + xywh_init1[3] /1.9),game_type1, "#fff",  "bold " + Math.round(xywh_init1[2]/10) +"px sans-serif");
+		alert("dd");
+		return;
 	}
 }
 function draw_rect(rect1, color1, border_wid1, color2 ){
