@@ -2,6 +2,7 @@
 var canvasID      = "canvasID";
 var canvas_ele;
 var width, height;
+var status1;
 function init_game(all_inputs ){
   	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
@@ -10,6 +11,7 @@ function init_game(all_inputs ){
 	width  = canvas_ele.width;
 	height = canvas_ele.height;
 	canvas_cts = canvas_ele.getContext("2d");
+	status1 = 0; 
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
