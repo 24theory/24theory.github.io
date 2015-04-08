@@ -4,6 +4,7 @@ var canvas_ele;
 var width, height;
 var status1;
 function init_game(all_inputs ){
+	alert("dd1");
   	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
  	canvas_ele.setAttribute('tabindex','0');
@@ -12,9 +13,11 @@ function init_game(all_inputs ){
 	height = canvas_ele.height;
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
+	alert("dd1");
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
+alert("dd2");
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		//draw_text (Array(xywh_init1[0] + xywh_init1[2] /5, xywh_init1[1] + xywh_init1[3] /1.9),game_type1, "#fff",  "bold " + Math.round(xywh_init1[2]/10) +"px sans-serif");
