@@ -7,7 +7,7 @@ function init_game( ){
   	canvas_ele   =  document.getElementById(canvasID) ;
 //	canvas_ele.addEventListener("click", onclick1, false);
  	canvas_ele.setAttribute('tabindex','0');
-	canvas_ele.focus();
+	canvas_ele.focus(); 
 	width  = canvas_ele.width;
 	height = canvas_ele.height/2;
 	canvas_cts = canvas_ele.getContext("2d");
