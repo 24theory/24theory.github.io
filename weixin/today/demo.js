@@ -9,7 +9,7 @@ function init_game( ){
  	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus();
 	width  = canvas_ele.width;
-	height = canvas_ele.height*2;
+	height = canvas_ele.height/2;
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
 	game_draw(0);
