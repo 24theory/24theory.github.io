@@ -1,4 +1,3 @@
- var canw = 1000; 
 var canvasID      = "canvasID";
 var canvas_ele;
 var width, height;
