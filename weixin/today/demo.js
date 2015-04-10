@@ -8,7 +8,7 @@ function init_game( ){
  	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus(); 
 	width  = canvas_ele.width;
-	height = canvas_ele.height/2;
+	height = canvas_ele.height;
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
 	game_draw(0);
@@ -16,7 +16,7 @@ function init_game( ){
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-		//draw_text (Array(xywh_init1[0] + xywh_init1[2] /5, xywh_init1[1] + xywh_init1[3] /1.9),game_type1, "#fff",  "bold " + Math.round(xywh_init1[2]/10) +"px sans-serif");
+		draw_text (Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2), "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
 		return;
 	}
 }
@@ -32,4 +32,10 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 	canvas_cts.strokeStyle  = color2;   // button color
 	if (border_wid1>0)
 		canvas_cts.strokeRect(Math.round(rect1[0] + border_wid1/ 2), Math.round(rect1[1] + border_wid1/2), Math.round(rect1[2] - border_wid1), Math.round(rect1[3] - border_wid1));
+}
+
+function draw_text (xy_array, text1, fillstyle1, font1){
+	canvas_cts.fillStyle = fillstyle1; // font color
+	canvas_cts.font = font1; 
+	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
 }
