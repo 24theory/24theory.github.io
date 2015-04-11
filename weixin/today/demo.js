@@ -44,6 +44,7 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
 }
 function onclick1 (e){
+    alert("d");
 	var canvas = document.getElementById(canvasID);
        var x, y;
 	var mainbody = document.getElementById(mainbodyID);
