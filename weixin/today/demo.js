@@ -9,7 +9,7 @@ var status1;
 var init_xywh;
 var step, game_tick; 
 var timerthis;
-
+var x_pos, y_pos;
 function init_game( ){
   	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
@@ -37,10 +37,23 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	    var m =[0,0];
-	   draw_convex(shape_x[0],shape_y[0],m,"#000");
+	    redrawall(step);
 	}
 }
-
+function redrawall(step1)
+{
+     var step2 = step1 % move.length; 
+     for (ii = 0; ii < shape_x.length; ii++)
+     {
+         if(move[step2][0] == ii) 
+         {
+            x_pos[ii] += move[step2][1];
+            y_pos[ii] += move[step2][2];
+         } 
+         var m = [x_pos[ii], y_pos[ii]];
+         draw_convex(shape_x[ii],shape_y[ii],m,"#000");
+    }
+}
 function draw_convex(x_array,y_array,xy_vec, color1){
     var x_min = 100, x_max = -100;
     var y_min = 100, y_max = -100;
@@ -114,6 +127,8 @@ function onclick1 (e){
                             status1 = 1; 
                             game_tick = 0; 
                             step = 0; 
+                            x_pos = init_x.slice();
+                            y_pos = init_y.slice();
                             game_draw(1);
 			}
 			break;
