@@ -1,6 +1,11 @@
 var canvasID      = "canvasID";
 var mainbodyID    = "page_body";
 var canvas_ele;
+var canw = xnum * 100, canh = 100 * ynum; 
+var x_disp = Math.floor(0.5 * canw / (xnum+1)), y_disp =Math.floor( 0.5 * canh / (ynum+1));
+var x_size = x_disp * 2, y_size = y_disp * 2; 
+var shape_x =[[1,2],[3]];
+var shape_y =[[0,0],[3]];
 var width, height;
 var status1;
 var init_xywh;
@@ -63,10 +68,8 @@ function onclick1 (e){
 		case  0: // on the init-game screen
  			var rect_arr = new Array(init_xywh);
 			game_genre = click_ID(x,y, rect_arr);
-			alert(game_genre);
-			if (game_genre==0){
-				alert("dd");
-
+ 			if (game_genre==0){
+ 
 			}
 	}
 }
@@ -74,8 +77,7 @@ function click_ID(x,y, rect_array){
 	var total = rect_array.length;
 	var ii ;
 	for ( ii = 0; ii < total ; ii ++){
-	    alert(x +" " +y + " "+rect_array[ii]);
-		if (x >= rect_array[ii][0] && x <= rect_array[ii][0] + rect_array[ii][2] && y >= rect_array[ii][1] && y <= rect_array[ii][1] + rect_array[ii][3]){
+ 		if (x >= rect_array[ii][0] && x <= rect_array[ii][0] + rect_array[ii][2] && y >= rect_array[ii][1] && y <= rect_array[ii][1] + rect_array[ii][3]){
 			return ii;
 		}
 	}
