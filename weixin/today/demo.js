@@ -23,7 +23,7 @@ function init_game( ){
 	game_tick = 0; 
 	clearInterval(timerthis);
 	timerthis = setInterval(function(){tickclock()},10);
-	alert([move[0], " ", move[1]," ", shape_x[1]," ", shape_x[0].length]);
+	//alert([move[0], " ", move[1]," ", shape_x[1]," ", shape_x[0].length]);
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
@@ -44,7 +44,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 function redrawall(step1)
 {
      var step2 = step1 % move.length; 
-     for (ii = 0; ii < shape_x.length; ii++)
+     for (var ii = 0; ii < shape_x.length; ii++)
      {
          if(move[step2][0] == ii) 
          {
@@ -64,7 +64,7 @@ function draw_convex(x_array,y_array,xy_vec, color1){
     var x_min = 100, x_max = -100;
     var y_min = 100, y_max = -100;
     var bord = x_size/10;
-    for (ii=0; ii < x_array.length; ii++)
+    for (var ii=0; ii < x_array.length; ii++)
     {
         if(x_array[ii] < x_min){x_min = x_array[ii];}
         if(x_array[ii] > x_max){x_max = x_array[ii];}
@@ -148,7 +148,7 @@ function onclick1 (e){
 function click_ID(x,y, rect_array){
 	var total = rect_array.length;
 	var ii ;
-	for ( ii = 0; ii < total ; ii ++){
+	for (var ii = 0; ii < total ; ii ++){
  		if (x >= rect_array[ii][0] && x <= rect_array[ii][0] + rect_array[ii][2] && y >= rect_array[ii][1] && y <= rect_array[ii][1] + rect_array[ii][3]){
 			return ii;
 		}
