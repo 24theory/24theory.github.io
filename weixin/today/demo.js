@@ -51,8 +51,9 @@ function redrawall(step1)
             y_pos[ii] += move[step2][2];
          } 
          var m = [x_pos[ii], y_pos[ii]];
+         alert([shape_x[ii], shape_y[ii], m]);
          draw_convex(shape_x[ii],shape_y[ii],m,"#000");
-         alert([shape_x, shape_y, m]);
+         
     }
 }
 function draw_convex(x_array,y_array,xy_vec, color1){
