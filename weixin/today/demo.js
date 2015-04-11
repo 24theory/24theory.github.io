@@ -18,7 +18,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		draw_rect(Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2), "#aaa", 0, "#000"); 
-		draw_text (Array(x_disp, canh/2 + y_disp, canw-x_disp *2, y_disp *2), "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
+		//draw_text (Array(x_disp, canh/2 + y_disp, canw-x_disp *2, y_disp *2), "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
 		alert(shape_x[0][1]);
 		return;
 	}
