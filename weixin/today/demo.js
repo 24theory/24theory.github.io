@@ -56,6 +56,7 @@ function onclick1 (e){
 		x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = e.clientY + document.body.scrollTop  + document.documentElement.scrollTop;
        }
+       alert(x);
        x -= (canvas.offsetLeft + mainbody.offsetLeft);
        y -= (canvas.offsetTop + mainbody.offsetTop);  
        alert(x);
