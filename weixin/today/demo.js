@@ -35,8 +35,8 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	}
 	if(status1 ==1){
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-	   // draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
-	   draw_convex([1,1],[1,2],[0,0],"#fff");
+	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
+	   draw_convex([1,1],[1,2],[0,0],"#000");
 	}
 }
 
