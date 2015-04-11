@@ -23,6 +23,7 @@ function init_game( ){
 	game_tick = 0; 
 	clearInterval(timerthis);
 	timerthis = setInterval(function(){tickclock()},10);
+	alert([move[0], " ", move[1]," ", shape_x[1]," ", shape_x[0].length]);
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
