@@ -58,7 +58,7 @@ function onclick1 (e){
        }
        x -= (canvas.offsetLeft + mainbody.offsetLeft);
        y -= (canvas.offsetTop + mainbody.offsetTop);  
-	alert(x." ".y);
+	alert(x+" "+y);
 	switch (status1){
 		case  0: // on the init-game screen
  			var rect_arr = new Array(init_xywh);
