@@ -51,6 +51,7 @@ function draw_convex(x_array,y_array,xy_vec, color1){
         if(y_array[ii] < y_min){y_min = y_array[ii];}
         if(y_array[ii] > y_max){y_min = y_array[ii];}
     }
+    alert(x_array[0]+ " " +x_min);
     x_min+=xy_vec[0];
     x_max+=xy_vec[0];
     y_min+=xy_vec[1];
