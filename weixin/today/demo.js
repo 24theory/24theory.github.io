@@ -41,18 +41,19 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 }
 
 function draw_convex(x_array,y_array,xy_vec, color1){
-    alert("d");
-    alert(x_array[0]);
-    var x_min = 100; var x_max = -100;
-    var y_min = 100; var y_max = -100;
+    var x_min = 100, x_max = -100;
+    var y_min = 100, y_max = -100;
     var bord = x_size/10;
+    alert("d");
     for (ii=0; ii < x_array.length(); ii++)
     {
+            alert("d1");
         if(x_array[ii] < x_min){x_min = x_array[ii];}
         if(x_array[ii] > x_max){x_max = x_array[ii];}
         if(y_array[ii] < y_min){y_min = y_array[ii];}
         if(y_array[ii] > y_max){y_min = y_array[ii];}
     }
+        alert("d3");
     alert(x_array[0]+ " " +x_min);
     x_min+=xy_vec[0];
     x_max+=xy_vec[0];
