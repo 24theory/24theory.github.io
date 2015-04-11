@@ -5,6 +5,7 @@ var timerthis;
 var game_str;
 var all_lines;
 var canvasID      = "canvasID";
+var mainbodyID    = "page_body";
 var canvas_ele;
 var canvas_cts;
 var game_type_txt = "game_type";
