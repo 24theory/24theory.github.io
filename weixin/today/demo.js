@@ -43,6 +43,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 function draw_convex(x_array,y_array,xy_vec, color1){
     var x_min = 100; var x_max = -100;
     var y_min = 100; var y_max = -100;
+    var bord = x_size/10;
     for (ii=0; ii < x_array.length(); ii++)
     {
         if(x_array[ii] < x_min){x_min = x_array[ii];}
