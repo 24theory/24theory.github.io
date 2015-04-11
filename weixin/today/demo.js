@@ -1,4 +1,5 @@
 var canvasID      = "canvasID";
+var mainbodyID    = "page_body";
 var canvas_ele;
 var width, height;
 var status1;
@@ -45,8 +46,8 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 }
 function onclick1 (e){
 	var canvas = document.getElementById(canvasID);
-       var x, y;
-	var mainbody = document.getElementById(mainbodyID);
+        var x, y;
+        var mainbody = document.getElementById(mainbodyID);
 
        if (e.pageX != undefined && e.pageY != undefined) {
   		x = e.pageX;
