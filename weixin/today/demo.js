@@ -2,14 +2,15 @@ var canvasID      = "canvasID";
 var canvas_ele;
 var width, height;
 var status1;
-
+var init_xywh;
 function init_game( ){
   	canvas_ele   =  document.getElementById(canvasID) ;
-//	canvas_ele.addEventListener("click", onclick1, false);
+	canvas_ele.addEventListener("click", onclick1, false);
  	canvas_ele.setAttribute('tabindex','0');
 	canvas_ele.focus(); 
 	width  = canvas_ele.width;
 	height = canvas_ele.height;
+	init_xywh = Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2);
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
 	game_draw(0);
@@ -17,8 +18,8 @@ function init_game( ){
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-		draw_rect(Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2), "#aaa", 0, "#000"); 
-		draw_text (Array(x_disp, canh/2 + y_disp, canw-x_disp *2, y_disp *2), "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
+		draw_rect(init_xywh, "#aaa", 0, "#000"); 
+		draw_text (init_xywh, "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
 		alert(shape_x[0][1]);
 		return;
 	}
@@ -41,4 +42,39 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
 	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
+}
+function onclick1 (e){
+	var canvas = document.getElementById(canvasID);
+       var x, y;
+	var mainbody = document.getElementById(mainbodyID);
+
+       if (e.pageX != undefined && e.pageY != undefined) {
+  		x = e.pageX;
+		y = e.pageY;
+       }
+       else {
+		x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+		y = e.clientY + document.body.scrollTop  + document.documentElement.scrollTop;
+       }
+       x -= (canvas.offsetLeft + mainbody.offsetLeft);
+       y -= (canvas.offsetTop + mainbody.offsetTop);  
+	switch (status1){
+		case  0: // on the init-game screen
+ 			var rect_arr = new Array(init_xywh);
+			game_genre = click_ID(x,y, rect_arr);
+			if (game_genre==0){
+				alert("dd");
+
+			}
+	}
+}
+function click_ID(x,y, rect_array){
+	var total = rect_array.length;
+	var ii ;
+	for ( ii = 0; ii < total ; ii ++){
+		if (x >= rect_array[ii][0] && x <= rect_array[ii][0] + rect_array[ii][2] && y >= rect_array[ii][1] && y <= rect_array[ii][1] + rect_array[ii][3]){
+			return ii;
+		}
+	}
+	return -1 ;
 }
