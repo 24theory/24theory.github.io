@@ -37,7 +37,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	    var m =[0,0];
-	   draw_convex(shape_x,shape_y,m,"#000");
+	   draw_convex(shape_x[0],shape_y[0],m,"#000");
 	}
 }
 
@@ -45,8 +45,7 @@ function draw_convex(x_array,y_array,xy_vec, color1){
     var x_min = 100, x_max = -100;
     var y_min = 100, y_max = -100;
     var bord = x_size/10;
-    alert("d");
-    for (ii=0; ii < x_array.length(); ii++)
+    for (ii=0; ii < x_array.length; ii++)
     {
             alert("d1");
         if(x_array[ii] < x_min){x_min = x_array[ii];}
