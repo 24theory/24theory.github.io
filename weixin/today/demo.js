@@ -4,8 +4,6 @@ var canvas_ele;
 var canw = xnum * 100, canh = 100 * ynum; 
 var x_disp = Math.floor(0.5 * canw / (xnum+1)), y_disp =Math.floor( 0.5 * canh / (ynum+1));
 var x_size = x_disp * 2, y_size = y_disp * 2; 
-var shape_x =[[1,2],[3]];
-var shape_y =[[0,0],[3]];
 var width, height;
 var status1;
 var init_xywh;
@@ -28,6 +26,9 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		var textrect =init_xywh.slice(); textrect[1] +=y_disp * 2; 
 		draw_text (textrect, "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
 		return;
+	}
+	if(status1 ==1){
+	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	}
 }
 function draw_rect(rect1, color1, border_wid1, color2 ){
@@ -69,8 +70,15 @@ function onclick1 (e){
  			var rect_arr = new Array(init_xywh);
 			game_genre = click_ID(x,y, rect_arr);
  			if (game_genre==0){
- 
+                            status1 = 1; 
+                            game_draw(1);
 			}
+			break;
+		case 1:
+		
+		
+		
+		break;
 	}
 }
 function click_ID(x,y, rect_array){
