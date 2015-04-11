@@ -23,7 +23,6 @@ function init_game( ){
 	game_tick = 0; 
 	clearInterval(timerthis);
 	timerthis = setInterval(function(){tickclock()},10);
-	//alert([move[0], " ", move[1]," ", shape_x[1]," ", shape_x[0].length]);
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
@@ -52,10 +51,6 @@ function redrawall(step1)
             y_pos[ii] += move[step2][2];
          } 
          var m = [x_pos[ii], y_pos[ii]];
-         alert(x_pos+" " + step2);
-         alert(m); 
-    
-         //alert([shape_x.length, 999, shape_x[ii], shape_y[ii], m]);
          draw_convex(shape_x[ii],shape_y[ii],m,"#000");
          
     }
