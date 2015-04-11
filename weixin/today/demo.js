@@ -47,19 +47,16 @@ function draw_convex(x_array,y_array,xy_vec, color1){
     var bord = x_size/10;
     for (ii=0; ii < x_array.length; ii++)
     {
-            alert("d1");
         if(x_array[ii] < x_min){x_min = x_array[ii];}
         if(x_array[ii] > x_max){x_max = x_array[ii];}
         if(y_array[ii] < y_min){y_min = y_array[ii];}
         if(y_array[ii] > y_max){y_min = y_array[ii];}
     }
-        alert("d3");
-    alert(x_array[0]+ " " +x_min);
     x_min+=xy_vec[0];
     x_max+=xy_vec[0];
     y_min+=xy_vec[1];
     y_max+=xy_vec[1];
-    var rect=[x_min * x_size + x_disp - bord, y_min * y_size + y_disp - bord,(x_max-x_min)*x_size -2* bod, (y_max-y_min)*y_size -2* bod ];
+    var rect=[x_min * x_size + x_disp - bord, y_min * y_size + y_disp - bord,(x_max-x_min)*x_size -2* bord, (y_max-y_min)*y_size -2* bord ];
     alert(rect[0]+ " " +rect[1]+ " " +rect[2]+ " " +rect[3]+ " " );
     draw_rect(rect, color1, x_disp, color1);
 }
