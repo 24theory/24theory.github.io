@@ -74,6 +74,7 @@ function click_ID(x,y, rect_array){
 	var total = rect_array.length;
 	var ii ;
 	for ( ii = 0; ii < total ; ii ++){
+	    alert(x +" " +y + " "+rect_array[ii]);
 		if (x >= rect_array[ii][0] && x <= rect_array[ii][0] + rect_array[ii][2] && y >= rect_array[ii][1] && y <= rect_array[ii][1] + rect_array[ii][3]){
 			return ii;
 		}
