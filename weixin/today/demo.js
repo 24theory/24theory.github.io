@@ -52,6 +52,7 @@ function redrawall(step1)
          } 
          var m = [x_pos[ii], y_pos[ii]];
          draw_convex(shape_x[ii],shape_y[ii],m,"#000");
+         alert([shape_x, shape_y, m]);
     }
 }
 function draw_convex(x_array,y_array,xy_vec, color1){
@@ -129,8 +130,6 @@ function onclick1 (e){
                             step = 0; 
                             x_pos = init_x.slice();
                             y_pos = init_y.slice();
-                            alert(x_pos);
-                            alert(y_pos);	
                             game_draw(1);
 			}
 			break;
