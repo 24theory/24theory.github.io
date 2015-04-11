@@ -7,6 +7,7 @@ var x_size = x_disp * 2, y_size = y_disp * 2;
 var width, height;
 var status1;
 var init_xywh;
+var step, game_tick; 
 function init_game( ){
   	canvas_ele   =  document.getElementById(canvasID) ;
 	canvas_ele.addEventListener("click", onclick1, false);
@@ -17,6 +18,9 @@ function init_game( ){
 	init_xywh = Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2);
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
+	game_tick = 0; 
+	clearInterval(timerthis);
+	timerthis = setInterval(function(){tickclock()},10);
 	game_draw(0);
 } 
 function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
@@ -29,6 +33,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	}
 	if(status1 ==1){
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
+	    draw_text (init_xywh, game_tick, "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
 	}
 }
 function draw_rect(rect1, color1, border_wid1, color2 ){
@@ -49,7 +54,17 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
 	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
+} 
+function tickclock(){
+	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
+		game_tick +=1;
+		if (game_tick % 100 ==0){
+			game_draw(1);
+		}	 
+	}
 }
+
+
 function onclick1 (e){
 	var canvas = document.getElementById(canvasID);
         var x, y;
@@ -71,6 +86,8 @@ function onclick1 (e){
 			game_genre = click_ID(x,y, rect_arr);
  			if (game_genre==0){
                             status1 = 1; 
+                            game_tick = 0; 
+                            step = 0; 
                             game_draw(1);
 			}
 			break;
