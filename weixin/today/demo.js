@@ -129,6 +129,8 @@ function onclick1 (e){
                             step = 0; 
                             x_pos = init_x.slice();
                             y_pos = init_y.slice();
+                            alert(x_pos);
+                            alert(y_pos);	
                             game_draw(1);
 			}
 			break;
