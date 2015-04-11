@@ -56,7 +56,7 @@ function draw_convex(x_array,y_array,xy_vec, color1){
     x_max+=xy_vec[0];
     y_min+=xy_vec[1];
     y_max+=xy_vec[1];
-    var rect=[x_min * x_size + x_disp - bord, y_min * y_size + y_disp - bord,(x_max-x_min)*x_size -2* bord, (y_max-y_min)*y_size -2* bord ];
+    var rect=[x_min * x_size + x_disp - bord, y_min * y_size + y_disp - bord,(x_max-x_min + 1)*x_size -2* bord, (y_max-y_min + 1)*y_size -2* bord ];
     alert(rect  );
     draw_rect(rect, color1, x_disp, color1);
 }
