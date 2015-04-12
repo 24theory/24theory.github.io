@@ -129,6 +129,7 @@ function tickclock(){
 		        step++;
 		        if(step >= move.length)
 		        {
+		            alert("dddd");
 		              status1 = 2; 
 		              step_end = 0; 
 		        }
