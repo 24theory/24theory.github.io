@@ -40,6 +40,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    canvas_cts.lineWidth   = 2;
 	   canvas_cts.strokeStyle  = "#00f";   // button color
 	   var rect = [x_disp, y_disp, x_size*xnum, y_size * ynum];
+	   canvas_cts.clearRect(rect);
 	   canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
