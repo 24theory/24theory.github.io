@@ -37,7 +37,6 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
                 step = 0; 
                redrawall(step);
 		draw_rect(init_xywh, "#aaa", 0, "#000"); 
-		var textrect =init_xywh.slice(); textrect[1] +=y_disp * 2; 
 		draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 		return;
 	}
@@ -54,6 +53,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	 //  canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
+	    draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 	    draw_text (clock_xywh, '还剩     '+(move.length-step)+'  步', "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 
 	}
