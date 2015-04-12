@@ -40,12 +40,12 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	      var rect = [x_disp, y_disp, x_size*xnum, y_size * ynum];
-	   alert(rect);
-	    canvas_cts.lineWidth   = 2;
-	   canvas_cts.strokeStyle  = "#00f";   // button color
-	
-	   canvas_cts.clearRect(rect);
-	   canvas_cts.strokeRect(rect);
+//	   alert(rect);
+//	    canvas_cts.lineWidth   = 2;
+//	   canvas_cts.strokeStyle  = "#00f";   // button color
+//	
+	  // canvas_cts.clearRect(rect);
+	 //  canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
 	}
