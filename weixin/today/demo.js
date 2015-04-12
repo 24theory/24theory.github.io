@@ -1,6 +1,8 @@
 var canvasID      = "canvasID";
 var mainbodyID    = "page_body";
 var canvas_ele;
+var canvas_cts;
+
 var canw = (1+ xnum) * 100, canh = 100 * (1+ynum); 
 var x_disp = Math.floor(0.5 * canw / (xnum+1)), y_disp =Math.floor( 0.5 * canh / (ynum+1));
 var x_size = x_disp * 2, y_size = y_disp * 2; 
