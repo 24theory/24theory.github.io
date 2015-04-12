@@ -109,7 +109,7 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
-	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]-xy_array[3]));
+	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]));
 } 
 function tickclock(){
 	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
