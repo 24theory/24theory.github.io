@@ -38,13 +38,12 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
                redrawall(step);
 		draw_rect(init_xywh, "#aaa", 0, "#000"); 
 		var textrect =init_xywh.slice(); textrect[1] +=y_disp * 2; 
-		draw_text (textrect, "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
+		draw_text (textrect, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 		return;
 	}
 	if(status1 ==1){
 	    
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-	    draw_text (clock_xywh, move.length-step, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	      var rect = [x_disp, y_disp, x_size*xnum, y_size * ynum];
 	      draw_rect(rect, "#fff", 2, "#00f" );
 //	   alert(rect);
@@ -55,6 +54,8 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	 //  canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
+	    draw_text (clock_xywh, '还剩     '+(move.length-step)+'  步', "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
+
 	}
 }
 function redrawall(step1)
