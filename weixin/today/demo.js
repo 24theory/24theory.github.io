@@ -129,7 +129,6 @@ function tickclock(){
 		        step++;
 		        if(step >= move.length)
 		        {
-		            alert("dddd");
 		              status1 = 2; 
 		              step_end = 0; 
 		        }
@@ -140,9 +139,9 @@ function tickclock(){
 	}
 	if (status1==2)
 	{
+	    game_tick +=1;
 	   if (game_tick%100 ==0)
 	   {
-	       alert("dd");
 	       step_end ++;
 	       game_draw();
 	   }
