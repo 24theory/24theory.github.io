@@ -124,7 +124,7 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 function tickclock(){
 	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
 		game_tick +=1;
-		if (game_tick % 20 ==0){
+		if (game_tick % 5 ==0){
 		    if(game_tick>100){
 		        step++;
 		        if(step >= move.length)
