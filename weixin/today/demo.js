@@ -53,8 +53,9 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	 //  canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
+	    draw_rect(init_xywh, "#aaa", 0, "#000"); 
 	    draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
-	    draw_text (clock_xywh, '还剩     '+(move.length-step)+'  步', "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
+	    draw_text (clock_xywh, '还剩     '+(move.length-step-1)+'  步', "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 
 	}
 }
@@ -114,7 +115,7 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 function tickclock(){
 	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
 		game_tick +=1;
-		if (game_tick % 100 ==0){
+		if (game_tick % 30 ==0){
 		    if(game_tick>100){step++;}
 			game_draw(1);
 		}	 
