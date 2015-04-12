@@ -141,6 +141,7 @@ function tickclock(){
 	{
 	   if (game_tick%100 ==0)
 	   {
+	       alert("dd");
 	       step_end ++;
 	       game_draw();
 	   }
