@@ -9,7 +9,7 @@ var x_size = x_disp * 2, y_size = y_disp * 2;
 var width, height;
 var status1;
 var init_xywh, clock_xywh;
-var step, game_tick; 
+var step, game_tick, step_end; 
 var timerthis;
 var x_pos, y_pos;
 function init_game( ){
@@ -28,7 +28,7 @@ function init_game( ){
 	timerthis = setInterval(function(){tickclock()},10);
 	game_draw(0);
 } 
-function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
+function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		 x_pos = init_x.slice();
@@ -60,6 +60,10 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	}
 	if (status1 == 2)
 	{
+	       if (step_end > 2)
+	       {
+	           alert("d");
+	       }
 	       draw_rect(init_xywh, "#aaa", 0, "#000"); 
 	       draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 	}
@@ -120,17 +124,26 @@ function draw_text (xy_array, text1, fillstyle1, font1){
 function tickclock(){
 	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
 		game_tick +=1;
-		if (game_tick % 10 ==0){
+		if (game_tick % 20 ==0){
 		    if(game_tick>100){
 		        step++;
 		        if(step >= move.length)
 		        {
 		              status1 = 2; 
+		              step_end = 0; 
 		        }
 		    }
-			game_draw(1);
+			game_draw();
 		}	 
 		
+	}
+	if (status1==2)
+	{
+	   if (game_tick%100 ==0)
+	   {
+	       step_end ++;
+	       game_draw();
+	   }
 	}
 }
 
@@ -159,7 +172,7 @@ function onclick1 (e){
                             step = 0; 
                             x_pos = init_x.slice();
                             y_pos = init_y.slice();
-                            game_draw(1);
+                            game_draw();
 			}
 		 
 }
