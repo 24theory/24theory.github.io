@@ -58,6 +58,11 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    draw_text (clock_xywh, '还剩     '+(move.length-step-1)+'  步', "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 
 	}
+	if (status1 == 2)
+	{
+	       draw_rect(init_xywh, "#aaa", 0, "#000"); 
+	       draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
+	}
 }
 function redrawall(step1)
 {
@@ -110,13 +115,19 @@ function draw_rect(rect1, color1, border_wid1, color2 ){
 function draw_text (xy_array, text1, fillstyle1, font1){
 	canvas_cts.fillStyle = fillstyle1; // font color
 	canvas_cts.font = font1; 
-	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]+xy_array[3]));
+	canvas_cts.fillText(text1, Math.round(xy_array[0]), Math.round(xy_array[1]+xy_array[3]/2));
 } 
 function tickclock(){
 	if (status1 == 1 ){ // status1 = 3 then it's waiting for the decision on quit or not
 		game_tick +=1;
-		if (game_tick % 30 ==0){
-		    if(game_tick>100){step++;}
+		if (game_tick % 10 ==0){
+		    if(game_tick>100){
+		        step++;
+		        if(step >= move.length)
+		        {
+		              status1 = 2; 
+		        }
+		    }
 			game_draw(1);
 		}	 
 		
