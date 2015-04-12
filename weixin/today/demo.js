@@ -38,7 +38,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
                redrawall(step);
 		draw_rect(init_xywh, "#aaa", 0, "#000"); 
 		var textrect =init_xywh.slice(); textrect[1] +=y_disp * 2; 
-		draw_text (textrect, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
+		draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 		return;
 	}
 	if(status1 ==1){
