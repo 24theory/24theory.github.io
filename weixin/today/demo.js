@@ -8,7 +8,7 @@ var x_disp = Math.floor(0.5 * canw / (xnum+1)), y_disp =Math.floor( 0.5 * canh /
 var x_size = x_disp * 2, y_size = y_disp * 2; 
 var width, height;
 var status1;
-var init_xywh;
+var init_xywh, clock_xywh;
 var step, game_tick; 
 var timerthis;
 var x_pos, y_pos;
@@ -19,7 +19,8 @@ function init_game( ){
 	canvas_ele.focus(); 
 	width  = canvas_ele.width;
 	height = canvas_ele.height;
-	init_xywh = Array(x_disp, canh/2 - y_disp, canw-x_disp *2, y_disp *2);
+	init_xywh = Array(x_disp, 0*(canh/2 - y_disp), canw-x_disp *2, y_disp *1);
+	clock_xywh =Array(x_disp, (canh - y_disp), canw-x_disp *2, y_disp *1);
 	canvas_cts = canvas_ele.getContext("2d");
 	status1 = 0; 
 	game_tick = 0; 
@@ -43,7 +44,7 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	if(status1 ==1){
 	    
 	    draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
-	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
+	    draw_text (clock_xywh, move.length-step, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	      var rect = [x_disp, y_disp, x_size*xnum, y_size * ynum];
 	      draw_rect(rect, "#fff", 2, "#00f" );
 //	   alert(rect);
