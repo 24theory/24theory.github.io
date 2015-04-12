@@ -39,7 +39,8 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 	    draw_text (init_xywh, game_tick, "#000",  "bold " + Math.round(canw/20) +"px sans-serif");
 	    canvas_cts.lineWidth   = 2;
 	   canvas_cts.strokeStyle  = "#00f";   // button color
-	   canvas_cts.strokeRect([x_disp, y_disp, x_size*xnum, y_size * ynum]);
+	   var rect = [x_disp, y_disp, x_size*xnum, y_size * ynum];
+	   canvas_cts.strokeRect(rect);
 	    var m =[0,0];
 	    redrawall(step);
 	}
