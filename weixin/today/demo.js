@@ -32,7 +32,9 @@ function game_draw(isclock){ // 0) status1, 1) game_type, 2) time, time_left, 3)
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
 		 x_pos = init_x.slice();
                 y_pos = init_y.slice();
-                            game_draw(1);
+                game_tick = 0; 
+                step = 0; 
+                game_draw(1);
 		draw_rect(init_xywh, "#aaa", 0, "#000"); 
 		var textrect =init_xywh.slice(); textrect[1] +=y_disp * 2; 
 		draw_text (textrect, "点击开始看演示", "#fff",  "bold " + Math.round(canw/10) +"px sans-serif");
