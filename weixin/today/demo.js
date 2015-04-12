@@ -136,8 +136,7 @@ function onclick1 (e){
        }
        x -= (canvas.offsetLeft + mainbody.offsetLeft);
        y -= (canvas.offsetTop + mainbody.offsetTop);  
-	switch (status1){
-		case  0: // on the init-game screen
+	 
  			var rect_arr = new Array(init_xywh);
 			game_genre = click_ID(x,y, rect_arr);
  			if (game_genre==0){
@@ -148,13 +147,7 @@ function onclick1 (e){
                             y_pos = init_y.slice();
                             game_draw(1);
 			}
-			break;
-		case 1:
-		
-		
-		
-		break;
-	}
+		 
 }
 function click_ID(x,y, rect_array){
 	var total = rect_array.length;
