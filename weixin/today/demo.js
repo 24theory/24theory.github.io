@@ -33,9 +33,9 @@ function init_game( ){
 var img_obj = {
     'source': null,
     'current': 0,
-    'total_frames': 16,
-    'width': 28 ,
-    'height': 48 
+    'total_frames': 42,
+    'width': 283,
+    'height': 480
 };
 
 var img = new Image();
