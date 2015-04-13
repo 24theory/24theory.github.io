@@ -38,11 +38,11 @@ var img_obj = {
     'height': 480
 };
 
-var img = new Image();
-img.onload = function () { // Triggered when image has finished loading.
-    img_obj.source = img;  // we set the image source for our object.
-}
-img.src = '1.gif'; // contains an image of size 256x16
+//var img = new Image();
+//img.onload = function () { // Triggered when image has finished loading.
+//    img_obj.source = img;  // we set the image source for our object.
+//}
+//img.src = '1.gif'; // contains an image of size 256x16
                               // with 16 frames of size 16x16
 
 function draw_anim(context, x, y, iobj) { // context is the canvas 2d context.
@@ -167,10 +167,10 @@ function tickclock(){
 	   {
 	       step_end ++;
 	       //game_draw();
-	           if (step_end >= 2)
+	       if (step_end >= 2)
 	       {
 	           
-                    draw_anim(canvas_cts, x_disp, y_disp, img_obj);
+                   // draw_anim(canvas_cts, x_disp, y_disp, img_obj);
 	              
 
 	       }
