@@ -65,7 +65,7 @@ function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved
 	              var base_image = new Image();
                       base_image.src = "1.gif";
                         base_image.onload = function(){ 
-                       	canvas_cts.drawimage(base_image, x_disp, y_disp);
+                       	canvas_cts.drawImage(base_image, x_disp, y_disp);
                         }
 
 	       }
