@@ -62,7 +62,7 @@ function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved
 	{
 	       if (step_end > 2)
 	       {
-	           alert("d");
+	            
 	       }
 	       draw_rect(init_xywh, "#aaa", 0, "#000"); 
 	       draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
