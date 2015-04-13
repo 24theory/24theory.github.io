@@ -166,13 +166,11 @@ function tickclock(){
 	   if (game_tick%100 ==0)
 	   {
 	       step_end ++;
-	       game_draw();
-	           if (step_end == 2)
+	       //game_draw();
+	           if (step_end >= 2)
 	       {
-	           setInterval((function (c, i) {
-                return function () {
-                    draw_anim(c, x_disp, y_disp, i);
-                };})(canvas_cts, img_obj), 100);
+	           
+                    draw_anim(canvas_cts, x_disp, y_disp, img_obj);
 	              
 
 	       }
