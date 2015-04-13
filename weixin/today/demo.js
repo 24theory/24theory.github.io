@@ -47,7 +47,7 @@ var img_obj = {
 
 function draw_anim(context, x, y, iobj) { // context is the canvas 2d context.
     if (iobj.source != null)
-        canvas_cts.drawImage(iobj.source, iobj.current * iobj.width, 0,
+        context.drawImage(iobj.source, iobj.current * iobj.width, 0,
                           iobj.width, iobj.height,
                           x, y, iobj.width, iobj.height);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
@@ -170,7 +170,7 @@ function tickclock(){
 	       if (step_end >= 2)
 	       {
 	           var img1 = new Image();
-			   img1.src="1.gif";
+			   img1.src="download.gif";
 			   canvas_cts.drawImage(img1, x_disp, y_disp);
                    // draw_anim(canvas_cts, x_disp, y_disp, img_obj);
 	              
