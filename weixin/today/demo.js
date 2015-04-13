@@ -169,7 +169,9 @@ function tickclock(){
 	       //game_draw();
 	       if (step_end >= 2)
 	       {
-	           
+	           var img1 = new Image();
+			   img1.src="1.gif";
+			   canvas_cts.drawImage(img1, x_disp, y_disp);
                    // draw_anim(canvas_cts, x_disp, y_disp, img_obj);
 	              
 
