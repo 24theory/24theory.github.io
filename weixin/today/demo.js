@@ -34,8 +34,8 @@ var img_obj = {
     'source': null,
     'current': 0,
     'total_frames': 16,
-    'width': 16,
-    'height': 16
+    'width': 283,
+    'height': 480
 };
 
 var img = new Image();
@@ -90,7 +90,7 @@ function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved
 	       {
 	           setInterval((function (c, i) {
                 return function () {
-                    draw_anim(c, 10, 10, i);
+                    draw_anim(c, x_disp, y_disp, i);
                 };})(canvas_cts, img_obj), 100);
 	              
 
