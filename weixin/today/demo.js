@@ -47,7 +47,7 @@ img.src = '1.gif'; // contains an image of size 256x16
 
 function draw_anim(context, x, y, iobj) { // context is the canvas 2d context.
     if (iobj.source != null)
-        context.drawImage(iobj.source, iobj.current * iobj.width, 0,
+        canvas_cts.drawImage(iobj.source, iobj.current * iobj.width, 0,
                           iobj.width, iobj.height,
                           x, y, iobj.width, iobj.height);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
