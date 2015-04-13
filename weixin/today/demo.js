@@ -86,15 +86,7 @@ function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved
 	}
 	if (status1 == 2)
 	{
-	       if (step_end == 2)
-	       {
-	           setInterval((function (c, i) {
-                return function () {
-                    draw_anim(c, x_disp, y_disp, i);
-                };})(canvas_cts, img_obj), 100);
-	              
-
-	       }
+	   
 	       draw_rect(init_xywh, "#aaa", 0, "#000"); 
 	       draw_text (init_xywh, "           点击这里开始演示", "#fff",  "bold " + Math.round(canw/20) +"px sans-serif");
 	}
@@ -175,6 +167,15 @@ function tickclock(){
 	   {
 	       step_end ++;
 	       game_draw();
+	           if (step_end == 2)
+	       {
+	           setInterval((function (c, i) {
+                return function () {
+                    draw_anim(c, x_disp, y_disp, i);
+                };})(canvas_cts, img_obj), 100);
+	              
+
+	       }
 	   }
 	}
 }
