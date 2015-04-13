@@ -28,6 +28,32 @@ function init_game( ){
 	timerthis = setInterval(function(){tickclock()},10);
 	game_draw(0);
 } 
+
+
+var img_obj = {
+    'source': null,
+    'current': 0,
+    'total_frames': 16,
+    'width': 16,
+    'height': 16
+};
+
+var img = new Image();
+img.onload = function () { // Triggered when image has finished loading.
+    img_obj.source = img;  // we set the image source for our object.
+}
+img.src = '1.gif'; // contains an image of size 256x16
+                              // with 16 frames of size 16x16
+
+function draw_anim(context, x, y, iobj) { // context is the canvas 2d context.
+    if (iobj.source != null)
+        context.drawImage(iobj.source, iobj.current * iobj.width, 0,
+                          iobj.width, iobj.height,
+                          x, y, iobj.width, iobj.height);
+    iobj.current = (iobj.current + 1) % iobj.total_frames;
+                   // incrementing the current frame and assuring animation loop
+}
+
 function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved, unsolved, 4) this game history
 	if (status1 == 0){
 		draw_rect(Array(0,0, width, height), "#fff", 0, "#000"); // clean the whole region
@@ -62,11 +88,11 @@ function game_draw(){ // 0) status1, 1) game_type, 2) time, time_left, 3) solved
 	{
 	       if (step_end == 2)
 	       {
-	              var base_image = new Image();
-                      base_image.src = "1.gif";
-                        base_image.onload = function(){ 
-                       	canvas_cts.drawImage(base_image, x_disp, y_disp);
-                        }
+	           setInterval((function (c, i) {
+                return function () {
+                    draw_anim(c, 10, 10, i);
+                };})(canvas_cts, img_obj), 100);
+	              
 
 	       }
 	       draw_rect(init_xywh, "#aaa", 0, "#000"); 
