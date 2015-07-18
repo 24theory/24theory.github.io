@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="pragma" content="no-cache" />
 <meta charset="utf-8">
-<title>今日24点! 4shu.net 24点游戏网</title>
+<title>今日24点! 来自 4shu.net 24点游戏网</title>
 
 <link href="http://24theory.github.io/weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -189,8 +189,10 @@ function set_title()
 	var dd = today.getDate();
 	var mm = today.getMonth()+1; //January is 0!
 	
-
-	document.title = '不错！ 你做出了今天的24点题目';
+	if (solved == 1)
+			document.title  = '今天的(4shu.net)24点我用了' + game_tick1/100 +'秒。 你来试试， 能不能比我快?'
+		else
+			document.title  = '今天的(4shu.net)24点有难度, 你来做一下?'
 
 	var final_message = '今天是' + mm + '月' +dd + '日 <br>' + '今天的高难24你用了 <span style="color:blue;">'+ game_tick/100 + '秒</span> <br>分享, 挑战你的小伙伴!';
 	final_message += '<br><br>点右上的X 进行1024测验!';
@@ -406,7 +408,8 @@ var messages=new Array("勿忘731， 关注中央电视台新纪录片",
 		</div>
    </div>
 	
-	
+	<img src="http://24theory.github.io/weixin/1/24.png"   style="width:0px;height:0;">
+
 	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
 		<a href="http://24theory.github.io/weixin/1/ios.html"><img src="http://24theory.github.io/weixin/1/ios2.png" width=90%/></a>
 		<a href="http://24theory.github.io/weixin/1/android.html"><img src="http://24theory.github.io/weixin/1/android1.png" width=90%/></a>
