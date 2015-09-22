@@ -2,38 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-<script type="text/javascript"> 
-    var sampling = Math.random() < 0.001;
-    var page_begintime = (+new Date());
-    (sampling) && ((new Image()).src = "http://isdspeed.qq.com/cgi-bin/r.cgi?flag1=7839&flag2=7&flag3=8&15=1000&r=" + Math.random());
-
-    var biz = "MzAxNTAwMzIzOQ==";
-    var sn = "afc07070302e29e161820c29d4dc905f" || "";
-    var mid = "207839466" || "";
-    var idx = "1" || "" ;
-    
-    //辟谣需求
-    var is_rumor = ""*1;
-    var norumor = ""*1;
-    if (!!is_rumor&&!norumor){
-      if (!document.referrer || document.referrer.indexOf("mp.weixin.qq.com/mp/rumor") == -1){
-        location.href = "http://mp.weixin.qq.com/mp/rumor?action=info&__biz=" + biz + "&mid=" + mid + "&idx=" + idx + "&sn=" + sn + "#wechat_redirect";
-      }
-    }
-
-    //原创需求，需要跳转到中间页
-    /*
-    var copyrightInfo = {
-        display_source : ""*1,
-        nocopyrightsource : ""*1
-    };
-    if (!!copyrightInfo.display_source&&!copyrightInfo.nocopyrightsource){
-      if (!document.referrer || document.referrer.indexOf("mp.weixin.qq.com/mp/reprint") == -1){
-        location.href = "http://mp.weixin.qq.com/mp/reprint?action=info&__biz=" + biz + "&mid=" + mid + "&idx=" + idx + "&sn=" + sn + "#wechat_redirect";
-      }
-    }*/
-</script>
+         
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,47 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
-<script type="text/javascript">
-    String.prototype.html = function(encode) {
-        var replace =["&#39;", "'", "&quot;", '"', "&nbsp;", " ", "&gt;", ">", "&lt;", "<", "&amp;", "&", "&yen;", "¥"];
-        if (encode) {
-            replace.reverse();
-        }
-        for (var i=0,str=this;i< replace.length;i+= 2) {
-             str=str.replace(new RegExp(replace[i],'g'),replace[i+1]);
-        }
-        return str;
-    };
-
-    window.isInWeixinApp = function() {
-        return /MicroMessenger/.test(navigator.userAgent);
-    };
-
-    window.getQueryFromURL = function(url) {
-        url = url || 'http://qq.com/s?a=b#rd'; // 做一层保护，保证URL是合法的
-        var query = url.split('?')[1].split('#')[0].split('&'),
-            params = {};
-        for (var i=0; i<query.length; i++) {
-            var arg = query[i].split('=');
-            params[arg[0]] = arg[1];
-        }
-        if (params['pass_ticket']) {
-        	params['pass_ticket'] = encodeURIComponent(params['pass_ticket'].html(false).html(false).replace(/\s/g,"+"));
-        }
-        return params;
-    };
-
-    (function() {
-	    var params = getQueryFromURL(location.href);
-        window.uin = params['uin'] || '';
-        window.key = params['key'] || '';
-        window.pass_ticket = params['pass_ticket'] || '';
-    })();
-
-    window.logs = {
-    	pagetime: {}
-    };
-</script>
+ 
 
         <title>4数网(4shu.net)智力题和答案</title>
         
