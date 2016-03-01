@@ -31,6 +31,29 @@
   
  </div>
  <div style=" text-align:center;">
+  	
+  	    
+  	 
+			 
+				<canvas id="canvas" height="450" width="800" style="border: 0px solid black; padding:20px;"></canvas>
+				<div id="legendDiv"></div>
+
+		 
+			<script>
+				var colors = [ ["rgba(255,0,0,1)", "rgba(0,0,255,1)", "rgba(0,255,0,1)",   "rgba(205,133,63,1)" ,"rgba(0,0,0,1)"], 
+					       ["rgba(5,0,0,1)", "rgba(0,0,255,.4)", "rgba(0,255,0,.4)", "rgba(205,133,63,.4)"  ,"rgba(0,0,0,.4)"]];
+				var curvenames = ["年平均PM2.5", "月平均PM2.5"];
+				var data_vec =[mean_yearly, mean_monthly];
+				var labels = getlabels_dates(data_vec[0].length,7,13,0);
+ 				var para = {scaleSteps: 20, scaleStepWidth: 10, scaleStartValue :0, pointDotRadius:4, pointDot: true,CANVAS_ID: "canvas", LEGEND_ID:"legendDiv", BEZIER:false};
+				window.onload = plot_line(data_vec, labels, colors, curvenames, para);
+			</script>
+
+	 
+  	    
+  	        
+  	                
+  	    
   	    <canvas id="canvasID"    width= "width=device-width" height = 360  style="border:solid 1px #444444;" > Your browser does not support HTML5, get a newer one. </canvas> 
 </div>  	    
   <p class="game-explanation" style="margin:1px 0 1px 0px;line-height:20px;">
