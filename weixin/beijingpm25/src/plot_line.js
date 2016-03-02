@@ -26,7 +26,7 @@ function plot_line(data_vec, labels0, colors, curvenames, para)
             var aa=Object.create(lineChartData.datasets[0]);
             lineChartData.datasets.push(aa);
         }
-   	lineChartData.datasets[ii].label = curvenames[ii];
+   	//lineChartData.datasets[ii].label = curvenames[ii];
    	lineChartData.datasets[ii].strokeColor = colors[1][ii];
    	lineChartData.datasets[ii].pointColor = colors[0][ii];
 	lineChartData.datasets[ii].data =data_vec[ii]; 
