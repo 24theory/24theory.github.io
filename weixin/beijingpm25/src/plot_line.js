@@ -46,7 +46,7 @@ function plot_line(data_vec, labels0, colors, curvenames, para)
 	   });
 //        myLine.datasets[1].points[0].fillColor = "red"; //bar 3
 //        myLine.update();   
-    legend(document.getElementById(para.LEGEND_ID), window.myLine);
+  // legend(document.getElementById(para.LEGEND_ID), window.myLine);
  	 
 }
 
