@@ -35,7 +35,7 @@ function plot_line(data_vec, labels0, colors, curvenames, para)
     window.myLine = new Chart(ctx).Line(lineChartData, {
 			 scaleOverride : true,
                          scaleSteps : para.scaleSteps,
-                         scaleStepWidth : para.scaleStepWidth,
+                         scaleStepWidth : para.scaleStepWidth*0.5,
                          scaleStartValue : para.scaleStartValue,
                          pointDotRadius : para.pointDotRadius,	    
                          pointDot : para.pointDot,
