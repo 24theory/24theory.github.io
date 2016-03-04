@@ -32,7 +32,7 @@ function plot_line(data_vec, labels0, colors, curvenames, para)
 	lineChartData.datasets[ii].data =data_vec[ii]; 
     }
     var ctx = document.getElementById(para.CANVAS_ID).getContext("2d");
-    window.myLine = new Chart(ctx).Line(lineChartData, {
+    window.myLine = new Chart(ctx).Line(lineChartData, { 
 			 scaleOverride : true,
                          scaleSteps : para.scaleSteps,
                          scaleStepWidth : para.scaleStepWidth*0.5,
