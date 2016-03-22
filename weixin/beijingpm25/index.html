@@ -13,7 +13,7 @@
 
 
 <script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
-<script type="text/javascript" src="http://24theory.github.io/weixin/1024/str.js"></script> 
+<script type="text/javascript" src="http://beijingpm25.com/data_now/last_3days.js"></script> 
  
  		<script src="src/chart/Chart.js"></script>
 		<script src="src/chart/legend.js"></script>
@@ -48,7 +48,7 @@
 				var data_vec =[mean_yearly, mean_monthly];
 				var labels = getlabels_dates(data_vec[0].length,7,13,0);
  				var para = {scaleSteps: 20, scaleStepWidth: 10, scaleStartValue :0, pointDotRadius:4, pointDot: true,CANVAS_ID: "canvas", LEGEND_ID:"legendDiv", BEZIER:false};
-				window.onload = plot_line(data_vec, labels, colors, curvenames, para);
+				window.onload = plot_line(last3d, labels, colors, curvenames, para);
 			</script>
 
 	
