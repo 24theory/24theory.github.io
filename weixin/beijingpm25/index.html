@@ -1,17 +1,11 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="pragma" content="no-cache" />
 <title>北京 pm2.5 空气质量 </title>
-
 <link href="http://24theory.github.io/weixin/1024/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-
- 
-
-
 <script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
 <script type="text/javascript" src="http://beijingpm25.com/data_now/last_3days.js"></script> 
  
@@ -29,19 +23,11 @@
 	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
 	48小时北京空气质量指数: <strong style="color:red; font-size:25px;">4shu</strong>  </div>
 
-
-  
- </div>
+   </div>
  <div style=" text-align:center;" style="width: 100%">
-  	
-  	     
-  	 
-			 
-				<canvas id="canvas" height="450" width="800" style="border: 0px solid black; padding:20px;"></canvas>
+  		<canvas id="canvas" height="450" width="800" style="border: 0px solid black; padding:20px;"></canvas>
 				<div id="legendDiv"></div>
-
-		 
-			<script>
+	<script>
 				var colors = [ ["rgba(255,0,0,1)", "rgba(0,0,255,1)", "rgba(0,255,0,1)",   "rgba(205,133,63,1)" ,"rgba(0,0,0,1)"], 
 					       ["rgba(5,0,0,1)", "rgba(0,0,255,.4)", "rgba(0,255,0,.4)", "rgba(205,133,63,.4)"  ,"rgba(0,0,0,.4)"]];
 				var curvenames = ["年1平均PM2.5", "月1平均PM2.5"];
@@ -49,33 +35,18 @@
 				var labels = getlabels_dates(data_vec[0].length,7,13,0);
  				var para = {scaleSteps: 20, scaleStepWidth: 10, scaleStartValue :0, pointDotRadius:4, pointDot: true,CANVAS_ID: "canvas", LEGEND_ID:"legendDiv", BEZIER:false};
 				window.onload = plot_line(last3d, labels, colors, curvenames, para);
-			</script>
+	</script>
 
 	
 </div>  	    
-  <p class="game-explanation" style="margin:1px 0 1px 0px;line-height:20px;">
-	<div style="float:center;text-align:center;font-size:14px;"> 
  
-	</div> 
-  </p>
 
  
 <div style="margin:0 1px;padding:1px; border:1px dashed #ccc;color:red;float:center;text-align:center;">
 	<div id="message" style="color:blue;"> </div>
 	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享空气质量到朋友圈。
 	
-</div>
-<center>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- mobile0 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:100px"
-     data-ad-client="ca-pub-8952689943698685"
-     data-ad-slot="7327813157"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</center>
+</div> 
 <div style="font-size:15px; font-weight:bold;margin-top:3px; margin-left:20px;padding:1px;" align="left">
 <br><center> 长按以下图片并扫描加我们4shu.net的订阅号。 我们不定期给你最NB的智力题目 </center><br> 
 <img src="http://24theory.github.io/weixin/weixin.jpg" width=90%/><br>
@@ -308,54 +279,13 @@ descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +
 </script>
 </body></div>
 
-
-<div class="container"  >
-	<div class="heading">
-		<div class="title" style="width:320px;float:center;">
-			<div style="font-size:20px; font-weight:bold;margin-top:5px; padding:0px; color:green">24点游戏是最好的大脑体操</div>
-		</div>
-		<div style="margin:0 10px;padding:5px; style="color:blue;">
-			用4个数字和 + - x / 四则运算快速算出24来. 24点权威站 <a href="http://www.4shu.net">4shu.net(4数网)</a> 提供的免费手机应用有 iOS,安卓 一体的排名榜. 你也下载个24点挑战赛?
-		</div>
-   </div>
-	
-	
-	<div style="font-size:15px;margin-top:5px;margin-left:0px; padding:0px;">
-<img src="http://24theory.github.io/weixin/1/24.png"   style="width:0px;height:0;">
-		<a href="http://24theory.github.io/weixin/1/ios.html"><img src="http://24theory.github.io/weixin/1/ios2.png" width=90%/></a>
-		<a href="http://24theory.github.io/weixin/1/android.html"><img src="http://24theory.github.io/weixin/1/android1.png" width=90%/></a>
-		<a href="http://www.4shu.net"><img src="http://24theory.github.io/weixin/1/24lilun1.png" width=90%/></a>
-	</div>
-</div>
-
-<center>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- mobile0 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:100px"
-     data-ad-client="ca-pub-8952689943698685"
-     data-ad-slot="7327813157"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</center>
 <div style="margin:0 10px;padding:5px; border:1px dashed #ccc;color:red;">
-	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享24点到朋友圈。
+	点右上角按钮 <img src="http://24theory.github.io/weixin/1/wxshare.png" style="width:20px;" />，分享pm2.5信息到朋友圈。
 	<div id="message" style="color:blue;"> </div>
 </div>
 
 
 
-	
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-50767006-1', '24theory.github.io');
-  ga('send', 'pageview');
-
-</script>
+	 
 	
 </html>
