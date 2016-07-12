@@ -60,7 +60,7 @@ if (levelaqicn <=1){ fontcolor = "black";}
 var text2 ="国家标准空气质量指数: "+"<span style=\"background: "+  aqilevel_color(levelaqicn)  +"; color: "+fontcolor+"\">"+ PM25_to_AQICN (last3d1[71]) +" (" + aqilevel_words(levelaqicn) + ")</span>";
 document.getElementById("updatetimecn").innerHTML= text2; 
 document.title ="北京PM2.5浓度"+last3d1[71] +",空气指数" +  PM25_to_AQI (last3d1[71]) +" (" + aqilevel_words(levelaqi) + ")";
-document.title = document.title +lastupdatetime[1]+"月"+lastupdatetime[2]+"日"+lastupdatetime[3]+"点15分更新.点击看最新PM2.5情况"
+document.title = document.title +lastupdatetime[2]+"日"+lastupdatetime[3]+"点数据.点击看最新PM2.5情况"
 
 var mydata = {labels:[], datasets:[{fillColor:[], strokeColor:[], data:[]}]}
 var num_shown = 72,ii;
