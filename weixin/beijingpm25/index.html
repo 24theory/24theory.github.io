@@ -81,7 +81,7 @@ for (ii = 0; ii < num_shown; ii++)
 
 }
 mydata.datasets[0]. strokeColor[num_shown-1] = "rgba( 0, 0, 0,1)";  
-mydata.labels[1] ='3天前'; mydata.labels[24] ='2天前';mydata.labels[48] ='1天前'; mydata.labels[72] ='';     mydata.labels[73] ='现在';    
+mydata.labels[3] ='3天前'; mydata.labels[24] ='2天前';mydata.labels[48] ='1天前'; mydata.labels[72] ='';     mydata.labels[73] ='现在';    
 var mydata1 = {
 	labels : [ 1 ,3, 4],
 	datasets : [
@@ -134,10 +134,10 @@ for (ii = 0; ii < num_shown; ii++)
 var setopts = {
     animation : true,
 maxBarWidth:8,
-barDatasetSpacing:-10,
+barDatasetSpacing:0,
 barShowStroke:true,
 graphMin : 0 , yAxisRight : true ,yAxisLeft : false ,
-		rotateLabels : 90,
+		rotateLabels : 60,
 yAxisLabel: "PM2.5 微克每立方米",
  yAxisFontSize : 12
 }
