@@ -235,7 +235,7 @@ function randomIntFromInterval(min,max)
 }
 function init_game( ){
 	var ii; 
-	var TOTAL = 1;
+	var TOTAL = 5;
 	game_str = new Array();
 	all_lines = new Array();
 	time_array = new Array();
