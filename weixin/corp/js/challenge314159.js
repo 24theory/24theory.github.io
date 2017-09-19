@@ -45,7 +45,7 @@ var quit_ratio = 0.8;
 function get_tail()
 {
 	var str1 = window.location.href;
-	return str1.substring( str1.length - 11  str1.length -5);
+	return str1.substring( str1.length - 11,  str1.length -5);
 }
 function arraytostring(array1){
 	var str1 = " ";
