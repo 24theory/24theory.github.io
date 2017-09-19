@@ -42,6 +42,11 @@ var ep = 0.000001;
 var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
 
+function get_tail()
+{
+	var str1 = window.location.href;
+	return str1.substring( str1.length - 11  str1.length -5);
+}
 function arraytostring(array1){
 	var str1 = " ";
 	for (ii = 0; ii < array1.length; ii ++)
@@ -235,7 +240,7 @@ function randomIntFromInterval(min,max)
 }
 function init_game( ){
 	var ii; 
-	var TOTAL = 2;
+	var TOTAL = 5;
 	game_str = new Array();
 	all_lines = new Array();
 	time_array = new Array();
