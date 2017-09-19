@@ -47,6 +47,10 @@ function get_tail()
 	var str1 = window.location.href;
 	return str1.substring( str1.length - 11,  str1.length -5);
 }
+function scramble(tail, name, score)
+{
+	return tail + "{" + score + "{" + name.replace(" ", "");
+}
 function arraytostring(array1){
 	var str1 = " ";
 	for (ii = 0; ii < array1.length; ii ++)
