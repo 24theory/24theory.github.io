@@ -43,7 +43,7 @@ var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10
 var quit_ratio = 0.8;
 function set_para()
 {
-	alert(scramble(get_tail(),"123","大宝"));
+	alert(scramble(get_tail(),"1234","大宝"));
 	var ii;
 	var bonus = 0;
  	for (ii = 0; ii < time_array.length; ii ++)
