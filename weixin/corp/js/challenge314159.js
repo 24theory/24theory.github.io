@@ -49,15 +49,9 @@ function getname() {
          		person = prompt("名字不能为空(长度<8):", "");
 		}
     } else {
-		 var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      alert( this.responseText);
-    }
-  };
-  xhttp.open("GET", "http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", true);
- 	xhReq.setRequestHeader("Content-Type", "text/html;charset=UTF-8");	
- xhttp.send(null);
+$.get("http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
         
     } 
 	return person;
