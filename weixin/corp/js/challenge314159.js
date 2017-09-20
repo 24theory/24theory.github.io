@@ -40,7 +40,7 @@ var rect_all, rect_QUIT_array; // rect_all is for game,  rect_QUIT_array is for 
 var rect_sol, rect_no_sol;
 var ep = 0.000001;
 var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
-var quit_ratio = 0.8; 
+var quit_ratio = 0.8;
 
 function getname() { 
     var person = prompt("请输入你的名字(长度<8):", "");
