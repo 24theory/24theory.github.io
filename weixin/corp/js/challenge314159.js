@@ -56,7 +56,8 @@ function getname() {
     }
   };
   xhttp.open("GET", "http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", true);
-  xhttp.send();
+ 	xhReq.setRequestHeader("Content-Type", "text/html;charset=UTF-8");	
+ xhttp.send(null);
         
     } 
 	return person;
