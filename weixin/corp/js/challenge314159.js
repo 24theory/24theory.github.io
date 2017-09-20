@@ -45,10 +45,18 @@ var quit_ratio = 0.8;
 function getname() { 
     var person = prompt("请输入你的名字(长度<8):", "");
     if (person == null || person == "") {
-		    if ( person == ""){ 
+		    if ( person == ""){
          		person = prompt("名字不能为空(长度<8):", "");
 		}
     } else {
+		 var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert( this.responseText);
+    }
+  };
+  xhttp.open("GET", "http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", true);
+  xhttp.send();
         
     }
 	return person;
