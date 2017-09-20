@@ -46,7 +46,7 @@ var quit_ratio = 0.8;
 function set_para()
 {
 	var name1 = getname();
-	//alert(scramble(get_tail(),"1234",name1));
+	alert(scramble(get_tail(),"1234",name1));
 	var ii;
 	var bonus = 0;
  	for (ii = 0; ii < time_array.length; ii ++)
