@@ -42,20 +42,7 @@ var ep = 0.000001;
 var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
 
-function getname() { 
-    var person = prompt("请输入你的名字(长度<8):", "");
-    if (person == null || person == "") {
-		    if ( person == ""){
-         		person = prompt("名字不能为空(长度<8):", "");
-		}
-    } else {
-$.get("http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });
-        
-    } 
-	return person;
-}
+
 function set_para()
 {
 	var name1 = getname();
