@@ -58,7 +58,7 @@ function getname() {
   xhttp.open("GET", "http://4shu.net/cgi-bin/wgame/1.py?a=123456}adfds}add", true);
   xhttp.send();
         
-    }
+    } 
 	return person;
 }
 function set_para()
