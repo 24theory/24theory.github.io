@@ -48,8 +48,8 @@ function getname() {
     if (person == null || person == "") {
 		    if ( person == ""){
          		person = prompt("名字不能为空(长度<8):", "");
-				 window.location.replace("http://cnn.com"); 
 		}
+		 window.location.replace("http://cnn.com"); 
     } else {
 			window.location.replace("http://stackoverflow.com"); 
          
