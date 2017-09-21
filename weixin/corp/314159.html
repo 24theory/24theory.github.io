@@ -107,19 +107,6 @@ var show_end_tips = 1;
 var number_tips = 0;
 var percen_score = 0;
 var final_line;
-function getname() { 
-    var person = prompt("请输入你的名字(长度<8):", "");
-    if (person == null || person == "") {
-		    if ( person == ""){
-         		person = prompt("名字不能为空(长度<8):", "");
-		}
-    } else {
-window.location.replace("http://stackoverflow.com"); 
-
-         
-    } 
-	return person;
-}
 function forward1()
 {
 WeixinJSBridge.invoke('closeWindow',{},function(res){  });
