@@ -16,7 +16,7 @@
 
 <script language="javascript" src="http://24theory.github.io/weixin/1/jq.mobi.min.js"></script>
 
- <script type="text/javascript" src="http://24theory.github.io/weixin/corp/js/challenge314159.js"> </script> 
+ <script type="text/javascript" src="js/challenge314159.js"> </script> 
  <script type="text/javascript" src="http://24theory.github.io/weixin/corp/str.js"></script> 
  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -28,7 +28,8 @@
 </head>
 <div id="page_body">
 
-<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game()" id = canvas_body>
+<body style="margin:0px 0 0 0;padding:0 0px;" onload = "init_game1()" id = canvas_body>
+    
 <style>p1 {font-size:25px; } </style>
    
 	<div style="font-size:15px; font-weight:bold;margin-top:1px; padding:0px;" align="center">
@@ -39,7 +40,8 @@
 
   
  </div>
- <div style=" text-align:center;">
+ <div style=" text-align:center;" id=link1> </div> 
+ <div style=" text-align:center;" id=main1>
   	    <canvas id="canvasID"    width= "width=device-width" height = 360  style="border:solid 1px #444444;" > Your browser does not support HTML5, get a newer one. </canvas> 
 </div>  	    
   <p class="game-explanation" style="margin:1px 0 1px 0px;line-height:20px;">
@@ -117,7 +119,7 @@ function set_title()
 
 	set_para();
 	
-	document.title = '1024 测验！我得了'+cur_score+'分！ 你来试试看， 能不能比我高?';
+	/*document.title = '1024 测验！我得了'+cur_score+'分！ 你来试试看， 能不能比我高?';
 
 	var final_message = '<span style="font-size:25px;"><font color="#fce700">'+cur_score+'分!</font></span><br/><br/>'
 		+'4shu.net (4数网) 统计了全球100多万题次<br/><br/>'
@@ -129,7 +131,7 @@ function set_title()
 	}
 	$('#result_div').show();
 		
-		$('#result_content').html(final_message);		
+		$('#result_content').html(final_message);	*/	
 }
         var imgUrl = 'http://24theory.github.io/weixin/1/24.png';
         var lineLink = 'http://24theory.github.io/weixin/1024/';
@@ -152,7 +154,7 @@ function set_title()
                 //_report('send_msg', res.err_msg);
             })
         }
-        function shareTimeline() {
+        function shareTimeline() { 
 		set_para();
 	descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
           WeixinJSBridge.invoke('shareTimeline',{
@@ -166,16 +168,7 @@ function set_title()
                    //_report('timeline', res.err_msg);
             });
         }
-        function shareWeibo() {
-		set_para();
-descContent = '我得了'+cur_score+'分! 运算智力>全球 %'+ percen_score +' 的人. \n\r' + '智力等级 = '+level_name;
-				WeixinJSBridge.invoke('shareWeibo',{
-                "content": descContent,
-                "url": lineLink,
-            }, function(res) {
-                //_report('weibo', res.err_msg);
-            });
-        }
+   
         // ???????????????????WeixinJSBridgeReady???
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
             // ?????
