@@ -41,25 +41,30 @@ var rect_sol, rect_no_sol;
 var ep = 0.000001;
 var num_ratio = 2/5, marg_ratio =  0.2, rect_thin_width = 3, rect_fat_width = 10;
 var quit_ratio = 0.8;
-
+var tailnumber;
 
 function getname() { 
-    var person = prompt("请输入你的名字(长度<8):", "");
-    if (person == null || person == "") {
-		    if ( person == ""){
-         		person = prompt("名字不能为空(长度<8):", "");
-		}
-		 window.location.replace("http://cnn.com");  
-    } else {
-			window.location.replace("http://stackoverflow.com"); 
-         
-    } 
-	return person;
+	if (cur_score >= 0)
+	{
+		var person = prompt( "        本次成绩： " + Math.floor(cur_score) + "\r\n         请输入你的名字(长度<8):", "");
+		if (person == null || person == "") {
+				if ( person == ""){
+					person = prompt("   名字不能为空(长度<10):", "");
+			}
+			window.location.replace(window.location.href);  
+		} else {
+			var final_desti = "http://www.4shu.net/cgi-bin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
+				window.location.replace(final_desti); 
+			
+		} 
+		return person;
+	}
+	else
+		alert('本次成绩: ' + Math.floor(cur_score) + ' 分\r\n。得分没有到50， 无法进入排名榜， 请继续努力！');
 }
 function set_para()
 {
-	var name1 = getname();
-	alert(scramble(get_tail(),"1234",name1));
+	
 	var ii;
 	var bonus = 0;
  	for (ii = 0; ii < time_array.length; ii ++)
@@ -73,7 +78,8 @@ function set_para()
 		}
 	}
 
- 	cur_score = Math.ceil(Number(score_all) + bonus); 
+ 	cur_score = Math.ceil(Number(score_all) + bonus) + tailnumber; 
+	var name1 = getname();
 	if (cur_score <= 33)
 	{
 		percen_score = cur_score * 25 /33 ;		
@@ -167,14 +173,26 @@ function set_para()
 		}
 	}
 }
-function get_tail()
+function get_tail(t1)
 {
 	var str1 = window.location.href;
-	return str1.substring( str1.length - 11,  str1.length -5);
+	if (str1.substring( str1.length - 4,  str1.length )==="rank")
+	{
+		if (t1 == 0)
+		{
+			return 0;
+		}
+		else 
+			{return str1.substring( str1.length - 16,  str1.length -10);}
+	}
+	else {
+		return str1.substring( str1.length - 11,  str1.length -5);
+	}
 }
 function scramble(tail, name, score)
 {
-	return tail + "{" + score + "{" + name.replace(" ", "");
+	var a = (parseInt(tail) + parseInt(score) +421)%1000;
+	return tail + "{" + score  + a +"{"+ name.replace(" ", "");
 }
 function arraytostring(array1){
 	var str1 = " ";
@@ -184,7 +202,18 @@ function arraytostring(array1){
 	}
 	return str1;
 }
-
+function init_game1()
+{
+	if (get_tail(0)==0)
+	{ var str1 = window.location.href;
+		document.getElementById( "link1" ).innerHTML ="<a href ="+str1.substring(0,str1.length-5) +">返回游戏</a><br><br>";
+		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgi-bin/wgame/2.php?a=" +get_tail(1)+"' width='400' height='600' frameborder='2' border='2'><iframe>";
+	}
+	else{
+		document.getElementById( "link1" ).innerHTML ="<a href ="+window.location.href +"?rank>查看排名</a><br><br>";
+		init_game();
+	}
+}
 
 function gameover(){
 
@@ -199,7 +228,7 @@ function gameover(){
 	document.getElementById("gamesub").submit();
 */
 	set_title();
-	init_game();
+	//init_game();
 }
 
 function new_quad(){
@@ -370,6 +399,7 @@ function randomIntFromInterval(min,max)
 function init_game( ){
 	var ii; 
 	var TOTAL = 5;
+	tailnumber = (Math.floor(10000 + Math.random() * 90000)*10 +4)/1000000;
 	game_str = new Array();
 	all_lines = new Array();
 	time_array = new Array();
