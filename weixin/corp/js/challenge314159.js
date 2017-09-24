@@ -29,7 +29,7 @@ var show_sol = 1;
 var quad, quad_c, quad_pos;  // the four numbers now and their positions
 var quad_all, quad_prev, quad_all_prev;
 var op_array = new Array('+', '-', '\u00D7', '\u00F7');
-var op_focus, num_focus;
+var op_focus, num_focus; 
 var past_steps, future_steps;
 var this_order;
 
