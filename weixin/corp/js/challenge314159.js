@@ -44,9 +44,9 @@ var quit_ratio = 0.8;
 var tailnumber;
 
 function getname() { 
-	if (cur_score >= 0)
+	if (cur_score >= 50)
 	{
-		var person = prompt( "        本次成绩： " + Math.floor(cur_score) + "\r\n         请输入你的名字(长度<8):", "");
+		var person = prompt( "          本次成绩： " + Math.floor(cur_score) + "\r\n         请输入你的名字(长度<8):", "");
 		if (person == null || person == "") {
 				if ( person == ""){
 					person = prompt("   名字不能为空(长度<10):", "");
@@ -60,7 +60,7 @@ function getname() {
 		return person;
 	}
 	else
-		alert('本次成绩: ' + Math.floor(cur_score) + ' 分\r\n。得分没有到50， 无法进入排名榜， 请继续努力！');
+		alert('    本次成绩: ' + Math.floor(cur_score) + ' 分\r\n。    得分没有到50， 无法进入排名榜， 请继续努力！');
 }
 function set_para()
 {
