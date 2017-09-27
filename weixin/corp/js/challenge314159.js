@@ -50,6 +50,9 @@ function getname() {
 		if (person == null || person == "") {
 				if ( person == ""){
 					person = prompt("   名字不能为空(长度<10):", "");
+					if (person == null || person == "") {window.location.replace(window.location.href);  }
+					else{			var final_desti = "http://www.4shu.net/cgi-bin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
+				window.location.replace(final_desti); }
 			}
 			window.location.replace(window.location.href);  
 		} else {
@@ -60,7 +63,9 @@ function getname() {
 		return person;
 	}
 	else
-		alert('    本次成绩: ' + Math.floor(cur_score) + ' 分\r\n。    得分没有到50， 无法进入排名榜， 请继续努力！');
+	{alert('    本次成绩: ' + Math.floor(cur_score) + ' 分\r\n。    得分没有到50， 无法进入排名榜， 请继续努力！');
+	 			window.location.replace(window.location.href);  
+	}
 }
 function set_para()
 {
