@@ -216,7 +216,8 @@ function init_game1()
 		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgi-bin/wgame/2.php?a=" +get_tail(1)+"' width='400' height='600' frameborder='2' border='2'><iframe>";
 	}
 	else{
-		document.getElementById( "link1" ).innerHTML ="<a href ="+window.location.href +"?rank>查看排名</a><br><br>";
+		var all = window.location.href.split("?");
+		document.getElementById( "link1" ).innerHTML ="<a href ="+all[0] +"?rank>查看排名</a><br><br>";
 		init_game();
 	}
 }
