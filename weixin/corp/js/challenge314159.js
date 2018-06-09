@@ -51,13 +51,13 @@ function getname() {
 			if ( person == ""){
 				person = prompt("   名字不能为空(长度<10):", "");
 				if (person == null || person == "") {window.location.replace(window.location.href);  }
-				else{			var final_desti = "http://www.4shu.net/cgi-bin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
+				else{			var final_desti = "http://www.4shu.net/cgibin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
 				window.location.replace(final_desti); }
 			}
 			else
 				window.location.replace(window.location.href);  
 		} else {
-			var final_desti = "http://www.4shu.net/cgi-bin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
+			var final_desti = "http://www.4shu.net/cgibin/wgame/1.php?a=" +scramble(get_tail(0), person, cur_score);
 				window.location.replace(final_desti); 
 			
 		} 
@@ -213,7 +213,7 @@ function init_game1()
 	if (get_tail(0)==0)
 	{ var str1 = window.location.href;
 		document.getElementById( "link1" ).innerHTML ="<a href ="+str1.substring(0,str1.length-5) +">返回游戏</a><br><br>";
-		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgi-bin/wgame/2.php?a=" +get_tail(1)+"' width='400' height='600' frameborder='2' border='2'><iframe>";
+		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgibin/wgame/2.php?a=" +get_tail(1)+"' width='400' height='600' frameborder='2' border='2'><iframe>";
 	}
 	else{
 		var all = window.location.href.split("?");
