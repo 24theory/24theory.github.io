@@ -25,7 +25,7 @@ function getname() {
 			window.location.replace(window.location.href);  
 		} else {
       cur_score = parseFloat(Math.random().toPrecision(6))+cur_score;
-		var final_desti = "http://www.4shu.net/cgi-bin/wgame/20481.php?a=" +scramble(person, cur_score);
+		var final_desti = "http://www.4shu.net/cgibin/wgame/20481.php?a=" +scramble(person, cur_score);
 				window.location.replace(final_desti); 
 			
 		} 
@@ -60,7 +60,7 @@ function HTMLActuator() {
   	if (get_tail()==0)
 	{ var str1 = window.location.href;
 		document.getElementById( "link1" ).innerHTML ="<a href ="+str1.substring(0,str1.length-5) +">返回游戏</a><br><br>";
-		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgi-bin/wgame/20482.php' width='400' height='600' frameborder='2' border='2'><iframe>";
+		document.getElementById( "main1" ).innerHTML =  "<iframe src='http://www.4shu.net/cgibin/wgame/20482.php' width='400' height='600' frameborder='2' border='2'><iframe>";
 	}
 	else{
 		document.getElementById( "link1" ).innerHTML ="<a href ="+window.location.href +"?rank>查看排名</a><br><br>";
